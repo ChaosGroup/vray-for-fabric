@@ -1,5 +1,5 @@
 #                             V-Ray for Fabric Engine
-![Canvas Screenshot](https://sjparker.github.io/canvas.png)
+![Canvas Screenshot](https://sjparker.github.io/images/screenshots/canvas.png)
 This project wraps the V-Ray Application SDK and provides bindings to Fabric Engine's scripting language, KL. It also exposes those bindings in Fabric Engine's graphical programming application, Canvas.
 
 The documentation and examples below assume a Linux environment.
