@@ -1,0 +1,129 @@
+
+object VRayRenderer {
+    Data pointer;
+};
+
+
+/// \dfgPresetCreate
+function VRayRenderer() = "VRayRenderer_construct";
+/// \dfgPresetOmit
+function VRayRenderer (RendererOptions options) = "VRayRenderer_construct_variant1";
+function ~VRayRenderer() = "VRayRenderer_destruct";
+
+function VRayError VRayRenderer.getLastError() = "VRayRenderer_getLastError";
+function ParserError VRayRenderer.getLastParserError() = "VRayRenderer_getLastParserError";
+
+function InstanceId VRayRenderer.getPluginID (String pluginName) = "VRayRenderer_getPluginID";
+function String VRayRenderer.getPluginName (InstanceId pluginID) = "VRayRenderer_getPluginName";
+
+function Boolean VRayRenderer.setRenderMode (VRay_RenderMode mode) = "VRayRenderer_setRenderMode";
+function VRay_RenderMode VRayRenderer.getRenderMode() = "VRayRenderer_getRenderMode";
+
+function VRayRenderer.showFrameBuffer (Boolean visible) = "VRayRenderer_showFrameBuffer";
+function VRayRenderer.showFrameBuffer (Boolean visible, Boolean setFocus) = "VRayRenderer_showFrameBuffer_variant1";
+function Boolean VRayRenderer.isFrameBufferShown() = "VRayRenderer_isFrameBufferShown";
+
+function Boolean VRayRenderer.setOptions (RendererOptions options) = "VRayRenderer_setOptions";
+function RendererOptions VRayRenderer.getOptions() = "VRayRenderer_getOptions";
+
+function VRayRenderer.enableVFBInteractivity() = "VRayRenderer_enableVFBInteractivity";
+function VRayRenderer.enableVFBInteractivity (Boolean enable) = "VRayRenderer_enableVFBInteractivity_variant1";
+function Boolean VRayRenderer.isVFBInteractivityEnabled() = "VRayRenderer_isVFBInteractivityEnabled";
+
+function SInt32 VRayRenderer.getCurrentFrame() = "VRayRenderer_getCurrentFrame";
+function VRayRenderer.setCurrentFrame (SInt32 frame) = "VRayRenderer_setCurrentFrame";
+
+function Float64 VRayRenderer.getCurrentTime() = "VRayRenderer_getCurrentTime";
+function VRayRenderer.setCurrentTime (Float64 time) = "VRayRenderer_setCurrentTime";
+
+function Boolean VRayRenderer.clearAllPropertyValuesUpToTime (Float64 time) = "VRayRenderer_clearAllPropertyValuesUpToTime";
+function VRayRenderer.useAnimatedValues (Boolean use) = "VRayRenderer_useAnimatedValues";
+function Boolean VRayRenderer.getUseAnimatedValuesState() = "VRayRenderer_getUseAnimatedValuesState";
+function SInt32 VRayRenderer.getSequenceFrame() = "VRayRenderer_getSequenceFrame";
+function VRayBox VRayRenderer.getBoundingBox() = "VRayRenderer_getBoundingBox";
+function VRayBox VRayRenderer.getBoundingBox (io Boolean success) = "VRayRenderer_getBoundingBox_variant1";
+function Boolean VRayRenderer.setCamera (VRayPlugin plugin) = "VRayRenderer_setCamera";
+function VRayPlugin VRayRenderer.getCamera() = "VRayRenderer_getCamera";
+
+function SInt32 VRayRenderer.getWidth() = "VRayRenderer_getWidth";
+function SInt32 VRayRenderer.getHeight() = "VRayRenderer_getHeight";
+function Boolean VRayRenderer.getImageSize (io SInt32 width, io SInt32 height) = "VRayRenderer_getImageSize";
+function Boolean VRayRenderer.setWidth (SInt32 width) = "VRayRenderer_setWidth";
+function Boolean VRayRenderer.setHeight (SInt32 height) = "VRayRenderer_setHeight";
+function Boolean VRayRenderer.setImageSize (SInt32 width, SInt32 height) = "VRayRenderer_setImageSize";
+
+function Boolean VRayRenderer.setRenderRegion (SInt32 srcX, SInt32 srcY, SInt32 srcWidth, SInt32 srcHeight, SInt32 destX, SInt32 destY, SInt32 destWidth, SInt32 destHeight) = "VRayRenderer_setRenderRegion";
+
+function SInt32 VRayRenderer.load (String fileName) = "VRayRenderer_load";
+function SInt32 VRayRenderer.loadAsText (String text) = "VRayRenderer_loadAsText";
+function SInt32 VRayRenderer.append (String fileName) = "VRayRenderer_append";
+function SInt32 VRayRenderer.appendAsText (String text) = "VRayRenderer_appendAsText";
+
+function VRayRenderer.start?() = "VRayRenderer_start";
+function VRayRenderer.startSync?() = "VRayRenderer_startSync";
+function VRayRenderer.run?() = "VRayRenderer_run";
+function VRayRenderer.renderSequence?() = "VRayRenderer_renderSequence";
+function VRayRenderer.renderSequence?(SubSequenceDesc[] descriptions, SInt64 count) = "VRayRenderer_renderSequence_variant1";
+function VRayRenderer.continueSequence?() = "VRayRenderer_continueSequence";
+function VRayRenderer.stop?() = "VRayRenderer_stop";
+
+function SInt32 VRayRenderer.exportScene (String fileName) = "VRayRenderer_exportScene";
+
+function VRayRenderer.bucketRenderNearest?(SInt32 x, SInt32 y) = "VRayRenderer_bucketRenderNearest";
+
+function SInt32 VRayRenderer.addHosts (String hosts) = "VRayRenderer_addHosts";
+function SInt32 VRayRenderer.removeHosts (String hosts) = "VRayRenderer_removeHosts";
+function String VRayRenderer.getAllHosts() = "VRayRenderer_getAllHosts";
+function String VRayRenderer.getActiveHosts() = "VRayRenderer_getActiveHosts";
+function String VRayRenderer.getInactiveHosts() = "VRayRenderer_getInactiveHosts";
+
+function Boolean VRayRenderer.commit() = "VRayRenderer_commit";
+
+function VRayImage VRayRenderer.getImage() = "VRayRenderer_getImage";
+function Boolean VRayRenderer.saveImage (String fileName) = "VRayRenderer_saveImage";
+function Boolean VRayRenderer.saveImage (String fileName, ImageWriterOptions options) = "VRayRenderer_saveImage_variant1";
+
+function Boolean VRayRenderer.isImageReady() = "VRayRenderer_isImageReady";
+function Boolean VRayRenderer.isRendering() = "VRayRenderer_isRendering";
+function Boolean VRayRenderer.isAborted() = "VRayRenderer_isAborted";
+function Boolean VRayRenderer.isSequenceDone() = "VRayRenderer_isSequenceDone";
+function Boolean VRayRenderer.waitForImageReady() = "VRayRenderer_waitForImageReady";
+function Boolean VRayRenderer.waitForImageReady (SInt32 timeout) = "VRayRenderer_waitForImageReady_variant1";
+function Boolean VRayRenderer.waitForSequenceDone() = "VRayRenderer_waitForSequenceDone";
+function Boolean VRayRenderer.waitForSequenceDone (SInt32 timeout) = "VRayRenderer_waitForSequenceDone_variant1";
+
+function String[] VRayRenderer.getPluginNames() = "VRayRenderer_getPluginNames";
+function InstanceId[] VRayRenderer.getPluginIds() = "VRayRenderer_getPluginIds";
+function InstanceId[] VRayRenderer.getPluginIds (String pluginClassName) = "VRayRenderer_getPluginIds_variant1";
+function String[] VRayRenderer.getAvailablePlugins() = "VRayRenderer_getAvailablePlugins";
+
+function VRayPlugin VRayRenderer.getInstanceOf (String pluginType) = "VRayRenderer_getInstanceOf";
+function VRayPlugin VRayRenderer.getInstanceOrCreate (String pluginType) = "VRayRenderer_getInstanceOrCreate";
+
+function VRayPlugin VRayRenderer.getPlugin (String pluginName) = "VRayRenderer_getPlugin_byname";
+function VRayPlugin VRayRenderer.getPlugin (InstanceId pluginID) = "VRayRenderer_getPlugin_byid";
+function VRayPluginMeta VRayRenderer.getPluginMeta (String pluginClassName) = "VRayRenderer_getPluginMeta";
+function VRayPlugin VRayRenderer.newPlugin (String pluginName, String pluginType) = "VRayRenderer_newPlugin";
+function VRayPlugin VRayRenderer.newPlugin (String pluginType) = "VRayRenderer_newPlugin_noname";
+function VRayPlugin VRayRenderer.pickPlugin (SInt32 x, SInt32 y) = "VRayRenderer_pickPlugin";
+function VRayPlugin VRayRenderer.pickPlugin (SInt32 x, SInt32 y, SInt32 timeout) = "VRayRenderer_pickPlugin_timeout";
+function PluginDistancePair[] VRayRenderer.pickPlugins (Float64 x, Float64 y) = "VRayRenderer_pickPlugins";
+function PluginDistancePair[] VRayRenderer.pickPlugins (Float64 x, Float64 y, SInt32 maxcount, SInt32 timeout) = "VRayRenderer_pickPlugins_variant1";
+function Boolean VRayRenderer.removePlugin (VRayPlugin plugin) = "VRayRenderer_removePlugin";
+function VRayPlugin VRayRenderer.getPluginPtr (String pluginName) = "VRayRenderer_getPluginPtr_byname";
+function VRayPlugin VRayRenderer.getPluginPtr (InstanceId pluginID) = "VRayRenderer_getPluginPtr_byid";
+function VRayPlugin VRayRenderer.pickPluginPtr (SInt32 x, SInt32 y) = "VRayRenderer_pickPluginPtr";
+function VRayPlugin VRayRenderer.pickPluginPtr (SInt32 x, SInt32 y, SInt32 timeout) = "VRayRenderer_pickPluginPtr_timeout";
+function VRayRenderer.freePluginPtr (VRayPlugin ptr) = "VRayRenderer_freePluginPtr";
+function Boolean VRayRenderer.pluginExists (String pluginName) = "VRayRenderer_pluginExists_byname";
+function Boolean VRayRenderer.pluginExists (InstanceId pluginID) = "VRayRenderer_pluginExists_byid";
+
+function Boolean VRayRenderer.getAutoCommit() = "VRayRenderer_getAutoCommit";
+function VRayRenderer.setAutoCommit (Boolean autoCommit) = "VRayRenderer_setAutoCommit";
+
+//function VRayRendererNative VRayRenderer.getNativeRenderer() = "VRayRenderer_getNativeRenderer";
+//function RenderElements VRayRenderer.getRenderElements() = "VRayRenderer_getRenderElements";
+
+
+
+

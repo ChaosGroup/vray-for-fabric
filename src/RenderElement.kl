@@ -1,0 +1,23 @@
+struct Info {
+    VRay_RenderElementBinaryFormat binaryFormat;
+    String name;
+    VRay_Type type;
+};
+
+
+object RenderElement {
+    Data pointer;
+};
+
+
+function RenderElement() = "RenderElement_construct";
+function ~RenderElement() = "RenderElement_destruct";
+
+function UInt32 RenderElement.getIndex() = "RenderElement_getIndex";
+function String RenderElement.getName() = "RenderElement_getName";
+function VRay_RenderElementType RenderElement.getType() = "RenderElement_getType";
+function VRay_RenderElementBinaryFormat RenderElement.getBinaryFormat() = "RenderElement_getBinaryFormat";
+function VRay_RenderElementPixelFormat RenderElement.getDefaultPixelFormat() = "RenderElement_getDefaultPixelFormat";
+function VRayImage RenderElement.getImage() = "RenderElement_getImage";
+function VRayImage RenderElement.getImage(ImageRegion region) = "RenderElement_getImage_variant1";
+

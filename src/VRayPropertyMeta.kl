@@ -1,0 +1,18 @@
+
+object VRayPropertyMeta {
+    Data pointer;
+};
+
+
+function VRayPropertyMeta() = "VRayPropertyMeta_construct";
+function ~VRayPropertyMeta() = "VRayPropertyMeta_destruct";
+
+function UInt32 VRayPropertyMeta.getElementsCount() = "VRayPropertyMeta_getElementsCount";
+function String VRayPropertyMeta.getName() = "VRayPropertyMeta_getName";
+function VRay_Type VRayPropertyMeta.getType() = "VRayPropertyMeta_getType";
+function String VRayPropertyMeta.getDefaultValue() = "VRayPropertyMeta_getDefaultValue";
+function String VRayPropertyMeta.getDescription() = "VRayPropertyMeta_getDescription";
+function String VRayPropertyMeta.typeToString (VRay_Type type) = "VRayPropertyMeta_typeToString";
+function String VRayPropertyMeta.typeToString (VRay_Type type, UInt32 count) = "VRayPropertyMeta_typeToString_variant1";
+function String VRayPropertyMeta.getTypeAsString() = "VRayPropertyMeta_getTypeAsString";
+

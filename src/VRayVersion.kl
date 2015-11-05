@@ -1,0 +1,12 @@
+
+struct VRayVersion {
+    UInt8 revision;
+    UInt8 minor;
+    UInt16 major;
+    UInt32 allFields;
+};
+
+
+function VRayVersion getVRayVersion() = "getVRayVersion";
+function String getVRayVersionAsString() = "getVRayVersionAsString";
+ 

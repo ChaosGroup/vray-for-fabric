@@ -1,0 +1,95 @@
+struct VRayVector {
+    Float32 x;
+    Float32 y;
+    Float32 z;
+};
+
+
+struct VRayMatrix {
+    VRayVector col1;
+    VRayVector col2;
+    VRayVector col3;
+};
+
+
+struct VRayTransform {
+    VRayMatrix matrix;
+    VRayVector offset;
+};
+
+
+struct VRayBox {
+    VRayVector pmin;
+    VRayVector pmax;
+};
+
+
+struct VRayColor {
+    Float32 r;
+    Float32 g;
+    Float32 b;
+};
+
+
+struct VRayAColor {
+    VRayColor color;
+    Float32 alpha;
+};
+
+
+struct PluginDistancePair {
+    VRayPlugin plugin;
+    Float64 distance;
+};
+
+
+struct SubFileInfo {
+    String pluginType;
+    String fileNameSuffix;
+};
+
+
+struct VRayExportSettings {
+    Boolean compressed;
+    Boolean framesInSeparateFiles;
+    Boolean useHexFormat;
+    Boolean renderElementsSeparateFolders;
+    SInt32 subFileInfoCount;
+    SubFileInfo subFileInfos[];
+};
+
+
+struct SubSequenceDesc {
+    SInt32 start;
+    SInt32 end;
+    SInt32 step;
+};
+
+
+struct RTStatistics {
+    Float64 pathsPerSecond;
+    UInt32 elapsedTicks;
+    SInt32 sampleLevel;
+};
+
+
+struct ParserError {
+    String fileName;
+    String errorText;
+    UInt32 fileLine;
+};
+
+
+alias UInt64 InstanceId;
+const InstanceId NO_ID = InstanceId (-1);
+
+alias SInt32 RGB32;
+alias Float32 real;
+alias SInt32 Bool;
+
+alias SInt32 IntList;
+alias Float32 FloatList;
+alias VRayColor ColorList;
+alias VRayVector VectorList;
+alias VRayValue ValueList;
+

@@ -1,0 +1,13 @@
+
+object VRayPluginMeta {
+    Data pointer;
+};
+
+
+function VRayPluginMeta() = "VRayPluginMeta_construct";
+function ~VRayPluginMeta() = "VRayPluginMeta_destruct";
+
+function String VRayPluginMeta.getType() = "VRayPluginMeta_getType";
+function String[] VRayPluginMeta.getPropertyNames() = "VRayPluginMeta_getPropertyNames";
+function VRayPropertyMeta VRayPluginMeta.getProperty (String propertyName) = "VRayPluginMeta_getProperty";
+

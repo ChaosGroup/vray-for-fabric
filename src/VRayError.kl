@@ -1,0 +1,14 @@
+
+object VRayError {
+    Data pointer;
+};
+
+
+function VRayError (VRay_ErrorCode errorCode) = "VRayError_construct";
+function ~VRayError() = "VRayError_destruct";
+
+function VRay_ErrorCode VRayError.getCode() = "VRayError_getCode";
+function String VRayError.toString() = "VRayError_toString";
+
+
+

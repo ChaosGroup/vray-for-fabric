@@ -1,0 +1,188 @@
+// VRay type enumerations
+alias SInt32 VRay_Type;
+// plugin property types
+const VRay_Type VRay_TYPE_INT                               = 0;    // Integer number.
+const VRay_Type VRay_TYPE_FLOAT                             = 1;    // Single-precision floating-point number.
+const VRay_Type VRay_TYPE_DOUBLE                            = 2;    // Double-precision floating-point number.
+const VRay_Type VRay_TYPE_BOOL                              = 3;    // Boolean parameter.
+const VRay_Type VRay_TYPE_VECTOR                            = 4;    // A Vector parameter.
+const VRay_Type VRay_TYPE_COLOR                             = 5;    // A Color parameter.
+const VRay_Type VRay_TYPE_ACOLOR                            = 6;    // An AColor parameter.
+const VRay_Type VRay_TYPE_MATRIX                            = 7;    // A Matrix parameter.
+const VRay_Type VRay_TYPE_TRANSFORM                         = 8;    // A TraceTransform parameter.
+const VRay_Type VRay_TYPE_STRING                            = 9;    // A string parameter.
+const VRay_Type VRay_TYPE_OBJECT                            = 10;   // Parameter that points to another plugin.                                                
+const VRay_Type VRay_TYPE_TEXTURE                           = 11;   // Input AColor texture parameter (supporting the TextureInterface interface).             
+const VRay_Type VRay_TYPE_LIST                              = 12;   // A list parameter, consisting of other components.                                       
+const VRay_Type VRay_TYPE_TEXTUREFLOAT                      = 13;   // Input floating-point texture parameter (supporting the TextureFloatInterface interface).
+const VRay_Type VRay_TYPE_TEXTUREINT                        = 14;   // Input integer texture parameter (supporting the TextureIntInterface interface).         
+const VRay_Type VRay_TYPE_TEXTUREVECTOR                     = 15;   // Input Vector texture parameter (supporting the TextureVectorInterface interface).       
+const VRay_Type VRay_TYPE_TEXTUREMATRIX                     = 16;   // Input Matrix texture parameter (supporing the TextureMatrixInterface interface).        
+const VRay_Type VRay_TYPE_TEXTURETRANSFORM                  = 17;   // Input Transform texture parameter (supporing the TextureTransformInterface interface).
+// list types
+const VRay_Type VRay_TYPE_GENERAL_LIST                      = VRay_TYPE_LIST;
+const VRay_Type VRay_TYPE_INT_LIST                          = 100;
+const VRay_Type VRay_TYPE_FLOAT_LIST                        = 101;
+const VRay_Type VRay_TYPE_BOOL_LIST                         = 103;
+const VRay_Type VRay_TYPE_VECTOR_LIST                       = 104;
+const VRay_Type VRay_TYPE_COLOR_LIST                        = 105;
+const VRay_Type VRay_TYPE_ACOLOR_LIST                       = 106;
+const VRay_Type VRay_TYPE_MATRIX_LIST                       = 107;
+const VRay_Type VRay_TYPE_TRANSFORM_LIST                    = 108;
+// special types
+const VRay_Type VRay_TYPE_STRING_PTR                        = 200;
+const VRay_Type VRay_TYPE_PLUGIN_PROP_PTR                   = 201;
+// output types
+const VRay_Type VRay_TYPE_OUTPUTTEXTURE                     = 1000; // Output AColor texture parameter (TextureInterface).
+const VRay_Type VRay_TYPE_OUTPUTTEXTUREFLOAT                = 1001; // Output floating-point texture parameter (TextureFloatInterface).
+const VRay_Type VRay_TYPE_OUTPUTTEXTUREINT                  = 1002; // Output integer texture parameter (TextureIntInterface).
+const VRay_Type VRay_TYPE_OUTPUTTEXTUREVECTOR               = 1003; // Output Vector texture parameter (TextureVectorInterface).
+const VRay_Type VRay_TYPE_OUTPUTTEXTUREMATRIX               = 1004; // Output Matrix texture parameter (TextureMatrixInterface).
+const VRay_Type VRay_TYPE_OUTPUTTEXTURETRANSFORM            = 1005; // Output Transform texture parameter (TextureTransformInterface).
+// misc types
+const VRay_Type VRay_TYPE_UNSPECIFIED                       = 10000;
+const VRay_Type VRay_TYPE_ERROR                             = -1;
+
+// VRay message level enumerations
+alias UInt32 VRay_MessageLevel;
+const VRay_MessageLevel VRay_MessageError                   = 9999; // error   - 0-9999
+const VRay_MessageLevel VRay_MessageWarning                 = 19999;// warning - 10000-19999
+const VRay_MessageLevel VRay_MessageInfo                    = 29999;// info    - 20000-29999
+
+// VRay bucket region generation mode enumerations
+alias UInt32 VRay_BucketMode;
+const VRay_BucketMode VRay_TOP_TO_BOTTOM                    = 0;
+const VRay_BucketMode VRay_LEFT_TO_RIGHT                    = 1;
+const VRay_BucketMode VRay_CHECKER                          = 2;
+const VRay_BucketMode VRay_SPIRAL                           = 3;
+const VRay_BucketMode VRay_TRIANGLE                         = 4;
+const VRay_BucketMode VRay_HILBERT                          = 5;
+
+alias UInt32 VRay_CompressionType;
+const VRay_CompressionType VRay_DEFAULT                     = 0;
+const VRay_CompressionType VRay_NO_COMPRESSION              = 1;
+const VRay_CompressionType VRay_RUN_LENGTH                  = 2;
+const VRay_CompressionType VRay_ZIP_SCANLINE                = 3;
+const VRay_CompressionType VRay_ZIP_BLOCK                   = 4;
+const VRay_CompressionType VRay_PIZ                         = 5;
+const VRay_CompressionType VRay_PXR24                       = 6;
+
+alias SInt32 VRay_RenderElementType;
+const VRay_RenderElementType VRay_NONE                      = -1;
+const VRay_RenderElementType VRay_FRAG_COLOR                = 1;
+const VRay_RenderElementType VRay_FRAG_TRANSP               = 2;    // Fragment alpha color.
+const VRay_RenderElementType VRay_FRAG_REALTRANSP           = 3;    // Fragment transparency.
+const VRay_RenderElementType VRay_FRAG_BACKGROUND           = 4;    // Fragment background color.
+const VRay_RenderElementType VRay_FRAG_ZBUF                 = 5;    // Fragment z-depth.
+const VRay_RenderElementType VRay_FRAG_RENDERID             = 6;    // Fragment render id.
+const VRay_RenderElementType VRay_FRAG_NORMAL               = 7;    // Fragment normal.
+const VRay_RenderElementType VRay_FRAG_ALPHATRANSP          = 8;    // Fragment alpha transparency.
+const VRay_RenderElementType VRay_FRAG_EXTRAAA              = 9;    // Channel for extra antialiasing
+const VRay_RenderElementType VRay_FRAG_WEIGHT               = 10;   // The fragment weight
+const VRay_RenderElementType VRay_FRAG_LAST                 = 11;
+// Render channels for the V-Ray VFB
+const VRay_RenderElementType VRay_VFB_ATMOSPHERE            = 100;  // Atmospheric effects channel.
+const VRay_RenderElementType VRay_VFB_DIFFUSE               = 101;  // Diffuse filter VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_REFLECT               = 102;  // Reflection VFB channel. This channel must be generated by shaders.
+const VRay_RenderElementType VRay_VFB_REFRACT               = 103;  // Refraction VFB channel. This channel must be generated by shaders.
+const VRay_RenderElementType VRay_VFB_SELFILLUM             = 104;  // Self-illumination VFB channel. This channel must be generated by shaders.
+const VRay_RenderElementType VRay_VFB_SHADOW                = 105;  // Shadow VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_SPECULAR              = 106;  // Specular VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_LIGHTING              = 107;  // Lighting VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_GI                    = 108;  // GI VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_CAUSTICS              = 109;  // Caustics VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_RAWGI                 = 110;  // Raw GI VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_RAWLIGHT              = 111;  // Raw light VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_RAWSHADOW             = 112;  // Raw shadow VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_VELOCITY              = 113;  // Velocity VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_RENDERID              = 114;  // Render ID VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_MTLID                 = 115;  // Mtl ID VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_NODEID                = 116;  // Node ID VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_ZDEPTH                = 117;  // Z-Depth VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_REFLECTION_FILTER     = 118;  // Reflection filter VFB channel. This channel must be generated by shaders.
+const VRay_RenderElementType VRay_VFB_RAW_REFLECTION        = 119;  // Raw reflection VFB channel. This channel must be generated by shaders.
+const VRay_RenderElementType VRay_VFB_REFRACTION_FILTER     = 120;  // Refraction filter VFB channel. This channel must be generated by shaders.
+const VRay_RenderElementType VRay_VFB_RAW_REFRACTION        = 121;  // Raw refraction VFB channel. This channel must be generated by shaders.
+const VRay_RenderElementType VRay_VFB_REALCOLOR             = 122;  // Real color VFB channel.
+const VRay_RenderElementType VRay_VFB_NORMAL                = 123;  // Normals VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_BACKGROUND            = 124;  // Background VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_ALPHA                 = 125;  // The alpha VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_COLOR                 = 126;  // The RGB color VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_WIRECOLOR             = 127;  // Wire color channel where each object appears with a solid color. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_MATTESHADOW           = 128;  // Matte shadow channel where full shadows are white and areas not in shadow are black; essentially this is (rawShadow)/(rawLight+rawShadow). This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_TOTALLIGHT            = 129;  // The total diffuse lighting (direct+indirect) falling on a surface. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_RAWTOTALLIGHT         = 130;  // The raw total diffuse lighting (direct+indirect) falling on a surface. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_BUMPNORMAL            = 131;  // The normal modified with bump map. This channel must be generated by shaders.
+const VRay_RenderElementType VRay_VFB_SAMPLERATE            = 132;  // The sample rate for the image samplers.
+const VRay_RenderElementType VRay_VFB_SSS2                  = 133;  // A channel used for VRayFastSSS2 material sub-surface portion.
+const VRay_RenderElementType VRay_DRBUCKET                  = 134;  // A channel that keeps track of which DR server rendered a particular bucket (it is a Color buffer that stores server name strings prerendered; as text; white on black)
+const VRay_RenderElementType VRay_VFB_VRMTLREFLECTGLOSS     = 135;  // A VRayMtl reflection glossiness  VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_VRMTLREFLECTHIGLOSS   = 136;  // A VRayMtl reflection hilight glossiness  VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_VRMTLREFRACTGLOSS     = 137;  // A VRayMtl reflection glossiness  VFB channel. This channel is generated by V-Ray.
+const VRay_RenderElementType VRay_VFB_SHADEMAP_EXPORT       = 138;  // A channel that keeps the fragment coordinates in camera space
+
+alias SInt32 VRay_RenderElementBinaryFormat;
+const VRay_RenderElementBinaryFormat VRay_BF_FLOAT          = 1;
+const VRay_RenderElementBinaryFormat VRay_BF_3FLOAT         = 2;
+const VRay_RenderElementBinaryFormat VRay_BF_2FLOAT         = 3;
+const VRay_RenderElementBinaryFormat VRay_BF_INT            = 4;
+const VRay_RenderElementBinaryFormat VRay_BF_3FLOAT_SIGNED  = 5;
+
+alias SInt32 VRay_RenderElementPixelFormat;
+const VRay_RenderElementPixelFormat VRay_PF_DEFAULT         = -1;
+const VRay_RenderElementPixelFormat VRay_PF_BW_BIT8         = 100;
+const VRay_RenderElementPixelFormat VRay_PF_BW_BIT6         = 101;
+const VRay_RenderElementPixelFormat VRay_PF_BW_BIT32        = 102;
+const VRay_RenderElementPixelFormat VRay_PF_BW_HALF         = 103;
+const VRay_RenderElementPixelFormat VRay_PF_BW_FLOAT        = 104;
+const VRay_RenderElementPixelFormat VRay_PF_RGB_BIT8        = 200;
+const VRay_RenderElementPixelFormat VRay_PF_RGB_BIT16       = 201;
+const VRay_RenderElementPixelFormat VRay_PF_RGB_HALF        = 202;
+const VRay_RenderElementPixelFormat VRay_PF_RGB_FLOAT       = 203;
+const VRay_RenderElementPixelFormat VRay_PF_RGBA_BIT8       = 300;
+const VRay_RenderElementPixelFormat VRay_PF_RGBA_BIT16      = 301;
+const VRay_RenderElementPixelFormat VRay_PF_RGBA_HALF       = 302;
+const VRay_RenderElementPixelFormat VRay_PF_RGBA_FLOAT      = 303;
+
+alias SInt32 VRay_RenderMode;
+const VRay_RenderMode VRay_RENDER_MODE_PRODUCTION           = -1;
+const VRay_RenderMode VRay_RENDER_MODE_RT_CPU               = 0;
+const VRay_RenderMode VRay_RENDER_MODE_RT_GPU_OPENCL        = 1;
+const VRay_RenderMode VRay_RENDER_MODE_RT_GPU_CUDA          = 4;
+const VRay_RenderMode VRay_RENDER_MODE_RT_GPU               = VRay_RENDER_MODE_RT_GPU_CUDA;
+
+alias UInt32 VRay_RenderOptionsDefaultSizes;
+const VRay_RenderOptionsDefaultSizes VRay_DEFAULT_WIDTH     = 0;
+const VRay_RenderOptionsDefaultSizes VRay_DEFAULT_HEIGHT    = 0;
+
+alias SInt32 VRay_ErrorCode;
+const VRay_ErrorCode VRay_INVALID_POINTER_ERROR             = -1;
+const VRay_ErrorCode VRay_SUCCESS                           = 0;
+const VRay_ErrorCode VRay_FILE_OPEN_ERROR                   = 1;
+const VRay_ErrorCode VRay_FILE_READ_ERROR                   = 2;
+const VRay_ErrorCode VRay_FILE_FORMAT_ERROR                 = 3;
+const VRay_ErrorCode VRay_NO_MEMORY_ERROR                   = 4;
+const VRay_ErrorCode VRay_NOT_SUPPORTED_ERROR               = 5;
+const VRay_ErrorCode VRay_LIBRARY_ERROR                     = 6;
+const VRay_ErrorCode VRay_FILE_WRITE_ERROR                  = 7;
+const VRay_ErrorCode VRay_FILE_NOT_FOUND_ERROR              = 8;
+const VRay_ErrorCode VRay_LOADING_SOME_PLUGINS_ERROR        = 9;
+const VRay_ErrorCode VRay_PARSING_VRSCENE_FILE_ERROR        = 10;
+const VRay_ErrorCode VRay_SYSTEM_ERROR                      = 11;
+const VRay_ErrorCode VRay_DR_INIT_ERROR                     = 12;
+const VRay_ErrorCode VRay_INVALID_RENDER_MODE_ERROR         = 13;
+const VRay_ErrorCode VRay_CANNOT_EXECUTE_WHILE_RENDERING_ERROR = 14;
+const VRay_ErrorCode VRay_CANNOT_EXECUTE_WHILE_NOT_RENDERING_ERROR = 15;
+const VRay_ErrorCode VRay_TIMEOUT_ERROR                     = 16;
+const VRay_ErrorCode VRay_SETTING_PROPERTY_VALUE_ERROR      = 17;
+const VRay_ErrorCode VRay_INVALID_PROPERTY_NAME_ERROR       = 18;
+const VRay_ErrorCode VRay_INVALID_PLUGIN_CLASS_NAME_ERROR   = 19;
+const VRay_ErrorCode VRay_INVALID_PLUGIN_NAME_ERROR         = 20;
+const VRay_ErrorCode VRay_INVALID_PLUGIN_ID_ERROR           = 21;
+const VRay_ErrorCode VRay_PLUGIN_NAME_ALREADY_EXISTS_ERROR  = 22;
+const VRay_ErrorCode VRay_VALUE_OUT_OF_RANGE_ERROR          = 23;
+const VRay_ErrorCode VRay_CANNOT_CREATE_RENDER_THREAD_ERROR = 24;
+const VRay_ErrorCode VRay_NUMBER_OF_ERRORS                  = 25;
+
+
+

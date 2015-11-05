@@ -1,0 +1,35 @@
+import os, sys
+
+try:
+  fabricPath = os.environ['FABRIC_DIR']
+except:
+  print "You must set FABRIC_DIR in your environment."
+  print "Refer to README.txt for more information."
+  sys.exit(1)
+
+Import('fabricBuildEnv')
+extName = 'vrayforfabric'
+
+env = fabricBuildEnv.Clone()
+env.Append (CPPPATH = [os.path.join (os.environ['VRAY_SDK'], 'cpp/include')])
+env.Append (LIBPATH = [os.path.join (os.environ['VRAY_SDK'], 'bin')])
+env.Append (LIBS = ['vray', 'VRaySDKLibrary'])
+
+cppFiles = env.Glob ('*.cpp')
+klFiles  = env.Glob ('*.kl')
+
+libName = env.Extension (extName, cppFiles + klFiles)
+
+extensionFiles  = env.Install (env.Dir ('#stage'), [env.File (extName+'.fpm.json')])
+extensionFiles += env.Install (env.Dir ('#stage'), klFiles)
+extensionFiles += env.Install (env.Dir ('#stage'), libName)
+
+presets = env.Presets (extName, extensionFiles)
+
+extensionFiles += env.Install (env.Dir ('#stage'), env.Dir ('#build/presets'))
+
+env.Clean (libName, env.Dir ('#build/include'))
+env.Clean (presets, env.Dir ('#build/presets'))
+env.Clean (presets, env.Dir ('#stage/presets'))
+
+Return ('extensionFiles')

@@ -1,0 +1,48 @@
+
+struct RendererFlags {
+    Boolean enableFrameBuffer;
+    Boolean showFrameBuffer;
+    Boolean inProcess;
+    Boolean keepRTRunning;
+    Boolean transferAssets;
+    Boolean useCachedAssets;
+    Boolean bakeGamma;
+    Boolean noRenderLicensePreCheck;
+    Boolean noDR;
+};
+
+
+object RendererOptions {
+    Data pointer;
+};
+
+
+function RendererOptions() = "RendererOptions_construct";
+function ~RendererOptions() = "RendererOptions_destruct";
+
+function UInt32 RendererOptions.imageWidth() = "RendererOptions_imageWidth";
+function RendererOptions.setImageWidth (UInt32 imagewidth) = "RendererOptions_setImageWidth";
+
+function UInt32 RendererOptions.imageHeight() = "RendererOptions_imageHeight";
+function RendererOptions.setImageHeight (UInt32 imageheight) = "RendererOptions_setImageHeight";
+
+function VRay_RenderMode RendererOptions.renderMode() = "RendererOptions_renderMode";
+function RendererOptions.setRenderMode (VRay_RenderMode rendermode) = "RendererOptions_setRenderMode";
+
+function UInt32 RendererOptions.rtSampleLevel() = "RendererOptions_rtSampleLevel";
+function RendererOptions.setRTSampleLevel (UInt32 rtsamplelevel) = "RendererOptions_setRTSampleLevel";
+
+function Float32 RendererOptions.rtNoiseThreshold() = "RendererOptions_rtNoiseThreshold";
+function RendererOptions.setRTNoiseThreshold (Float32 rtnoisethreshold) = "RendererOptions_setRTNoiseThreshold";
+
+function UInt64 RendererOptions.rtTimeout() = "RendererOptions_rtTimeout";
+function RendererOptions.setRTTimeout (UInt64 rttimeout) = "RendererOptions_setRTTimeout";
+
+function UInt32 RendererOptions.numThreads() = "RendererOptions_numThreads";
+function RendererOptions.setNumThreads (UInt32 numthreads) = "RendererOptions_setNumThreads";
+
+function RendererFlags RendererOptions.flags() = "RendererOptions_flags";
+function RendererOptions.setFlags (RendererFlags flags) = "RendererOptions_setFlags";
+
+function String RendererOptions.pluginLibraryPath() = "RendererOptions_pluginLibraryPath";
+function RendererOptions.setPluginLibraryPath (String pluginLibraryPath) = "RendererOptions_setPluginLibraryPath";

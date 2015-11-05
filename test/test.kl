@@ -1,0 +1,42 @@
+require vrayforfabric;
+
+operator entry() {
+    VRayInit init(true);
+
+    RendererOptions options();
+    options.setRenderMode (VRay_RENDER_MODE_PRODUCTION);
+
+    RendererFlags flags;
+    flags.showFrameBuffer = false;
+    options.setFlags (flags);
+
+    VRayRenderer renderer (options);
+
+    Integer loaded = renderer.load ("test/test.vrscene");
+    if (loaded == 0) {
+        String names[] = renderer.getPluginNames();
+
+        for (Integer i; i < names.size(); i++) {
+            report (names[i]+": "+renderer.getPluginID (names[i]));
+        }
+    }
+
+    VRayPlugin plugin = renderer.getInstanceOf ("SettingsOptions");
+    report (plugin.getName());
+
+    if (renderer.load ("test/test.vrscene") == 0) {
+        report ("Rendering ...");
+        renderer.run();
+    }
+    else {
+        report ("Render failed.");
+    }
+
+    VRayImage image = renderer.getImage();
+    image.saveToPngFile ("render.png", false);
+
+    if (renderer.exportScene ("dump.vrscene") == 0) {
+        report ("Export dump.vrscene, succeeded.");
+    }
+}
+

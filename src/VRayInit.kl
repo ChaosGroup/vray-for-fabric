@@ -1,0 +1,12 @@
+
+object VRayInit {
+    Data pointer;
+};
+
+function VRayInit()  = "VRayInit_construct";
+function ~VRayInit() = "VRayInit_destruct";
+
+function VRayInit (Boolean enableFrameBuffer) = "VRayInit_construct_variant1";
+
+
+

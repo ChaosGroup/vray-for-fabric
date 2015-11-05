@@ -1,0 +1,77 @@
+
+object VRayPlugin {
+    Data pointer;
+};
+
+
+function VRayPlugin() = "VRayPlugin_construct";
+function VRayPlugin (VRayRenderer renderer, String name) = "VRayPlugin_construct_variant1";
+function VRayPlugin (VRayRenderer renderer, InstanceId id) = "VRayPlugin_construct_variant2";
+function ~VRayPlugin() = "VRayPlugin_destruct";
+
+function VRayRenderer VRayPlugin.getRenderer() = "VRayPlugin_getRenderer";
+function String VRayPlugin.getName() = "VRayPlugin_getName";
+function String VRayPlugin.getType() = "VRayPlugin_getType";
+function InstanceId VRayPlugin.getId() = "VRayPlugin_getId";
+function VRayPluginMeta VRayPlugin.getMeta() = "VRayPlugin_getMeta";
+function VRayPropertyRuntimeMeta VRayPlugin.getPropertyRuntimeMeta (String propertyName) = "VRayPlugin_getPropertyRuntimeMeta";
+function String VRayPlugin.getValueAsString (String propertyName) = "VRayPlugin_getValueAsString";
+function String VRayPlugin.getValueAsString (String propertyName, io Boolean ok) = "VRayPlugin_getValueAsString_variant1";
+function Boolean VRayPlugin.setValueAsString (String propertyName, String value) = "VRayPlugin_setValueAsString";
+function Boolean VRayPlugin.setValueAsStringAtTime (String propertyName, String value, Float64 time) = "VRayPlugin_setValueAsStringAtTime";
+
+function Boolean VRayPlugin.getBool (String propertyName) = "VRayPlugin_getBool";
+function Boolean VRayPlugin.getBool (String propertyName, io Boolean ok) = "VRayPlugin_getBool_variant1";
+function SInt32 VRayPlugin.getInt (String propertyName) = "VRayPlugin_getInt";
+function SInt32 VRayPlugin.getInt (String propertyName, io Boolean ok) = "VRayPlugin_getInt_variant1";
+function Float32 VRayPlugin.getFloat (String propertyName) = "VRayPlugin_getFloat";
+function Float32 VRayPlugin.getFloat (String propertyName, io Boolean ok) = "VRayPlugin_getFloat_variant1";
+function VRayColor VRayPlugin.getColor (String propertyName) = "VRayPlugin_getColor";
+function VRayColor VRayPlugin.getColor (String propertyName, io Boolean ok) = "VRayPlugin_getColor_variant1";
+function VRayAColor VRayPlugin.getAColor (String propertyName) = "VRayPlugin_getAColor";
+function VRayAColor VRayPlugin.getAColor (String propertyName, io Boolean ok) = "VRayPlugin_getAColor_variant1";
+function VRayVector VRayPlugin.getVector (String propertyName) = "VRayPlugin_getVector";
+function VRayVector VRayPlugin.getVector (String propertyName, io Boolean ok) = "VRayPlugin_getVector_variant1";
+function VRayMatrix VRayPlugin.getMatrix (String propertyName) = "VRayPlugin_getMatrix";
+function VRayMatrix VRayPlugin.getMatrix (String propertyName, io Boolean ok) = "VRayPlugin_getMatrix_variant1";
+function VRayTransform VRayPlugin.getTransform (String propertyName) = "VRayPlugin_getTransform";
+function VRayTransform VRayPlugin.getTransform (String propertyName, io Boolean ok) = "VRayPlugin_getTransform_variant1";
+//function VRayValue VRayPlugin.getValue (String propertyName) = "VRayPlugin_getValue";
+
+function Boolean VRayPlugin.isAnimated (String propertyName) = "VRayPlugin_isAnimated";
+
+function Boolean VRayPlugin.setValue (String propertyName, Boolean value) = "VRayPlugin_setValueBool";
+function Boolean VRayPlugin.setValueAtTime (String propertyName, Boolean value, Float64 time) = "VRayPlugin_setValueAtTimeBool";
+function Boolean VRayPlugin.setValue (String propertyName, SInt32 value) = "VRayPlugin_setValueInt";
+function Boolean VRayPlugin.setValueAtTime (String propertyName, SInt32 value, Float64 time) = "VRayPlugin_setValueAtTimeInt";
+function Boolean VRayPlugin.setValue (String propertyName, Float32 value) = "VRayPlugin_setValueFloat";
+function Boolean VRayPlugin.setValueAtTime (String propertyName, Float32 value, Float64 time) = "VRayPlugin_setValueAtTimeFloat";
+function Boolean VRayPlugin.setValue (String propertyName, VRayColor value) = "VRayPlugin_setValueColor";
+function Boolean VRayPlugin.setValueAtTime (String propertyName, VRayColor value, Float64 time) = "VRayPlugin_setValueAtTimeColor";
+function Boolean VRayPlugin.setValue (String propertyName, VRayAColor value) = "VRayPlugin_setValueAColor";
+function Boolean VRayPlugin.setValueAtTime (String propertyName, VRayAColor value, Float64 time) = "VRayPlugin_setValueAtTimeAColor";
+function Boolean VRayPlugin.setValue (String propertyName, VRayVector value) = "VRayPlugin_setValueVector";
+function Boolean VRayPlugin.setValueAtTime (String propertyName, VRayVector value, Float64 time) = "VRayPlugin_setValueAtTimeVector";
+function Boolean VRayPlugin.setValue (String propertyName, VRayMatrix value) = "VRayPlugin_setValueMatrix";
+function Boolean VRayPlugin.setValueAtTime (String propertyName, VRayMatrix value, Float64 time) = "VRayPlugin_setValueAtTimeMatrix";
+function Boolean VRayPlugin.setValue (String propertyName, VRayTransform value) = "VRayPlugin_setValueTransform";
+function Boolean VRayPlugin.setValueAtTime (String propertyName, VRayTransform value, Float64 time) = "VRayPlugin_setValueAtTimeTransform";
+function Boolean VRayPlugin.setValue (String propertyName, VRayPlugin value) = "VRayPlugin_setValuePlugin";
+function Boolean VRayPlugin.setValueAtTime (String propertyName, VRayPlugin value, Float64 time) = "VRayPlugin_setValueAtTimePlugin";
+function Boolean VRayPlugin.setValue (String propertyName, String value) = "VRayPlugin_setValueString";
+function Boolean VRayPlugin.setValueAtTime (String propertyName, String value, Float64 time) = "VRayPlugin_setValueAtTimeString";
+function Boolean VRayPlugin.setValue (String propertyName, VRayPlugin outPlugin, String outPropertyName) = "VRayPlugin_setValuePluginOut";
+//function Boolean VRayPlugin.setValue (String propertyName, VRayValue value) = "VRayPlugin_setValue";
+//function Boolean VRayPlugin.setValueAtTime (String propertyName, VRayValue value, Float64 time) = "VRayPlugin_setValueAtTime";
+//function Boolean VRayPlugin.setValue (String propertyName, VRayData data, UInt64 count) = "VRayPlugin_setValueData";
+//function Boolean VRayPlugin.setValueAtTime (String propertyName, VRayData data, UInt64 count, Float64 time) = "VRayPlugin_setValueAtTimeData";
+
+
+
+
+
+
+
+
+
+

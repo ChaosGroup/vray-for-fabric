@@ -1,0 +1,51 @@
+
+object VRayValue {
+    Data pointer;
+};
+
+
+
+function VRayValue() = "VRayValue_construct";
+function VRayValue (SInt32 value) = "VRayValue_construct_int";
+function VRayValue (Float32 value) = "VRayValue_construct_float";
+function VRayValue (Boolean value) = "VRayValue_construct_bool";
+function VRayValue (VRayColor value) = "VRayValue_construct_color";
+function VRayValue (VRayAColor value) = "VRayValue_construct_acolor";
+function VRayValue (VRayVector value) = "VRayValue_construct_vector";
+function VRayValue (VRayMatrix value) = "VRayValue_construct_matrix";
+function VRayValue (VRayTransform value) = "VRayValue_construct_transform";
+function VRayValue (IntList[] list) = "VRayValue_construct_intlist";
+function VRayValue (FloatList[] list) = "VRayValue_construct_floatlist";
+function VRayValue (VectorList[] list) = "VRayValue_construct_vectorlist";
+function VRayValue (ColorList[] list) = "VRayValue_construct_colorlist";
+function VRayValue (ValueList[] list) = "VRayValue_construct_valuelist";
+function VRayValue (String value) = "VRayValue_construct_string";
+function VRayValue (VRayPlugin plugin) = "VRayValue_construct_plugin";
+function VRayValue (VRayRenderer renderer, InstanceId id) = "VRayValue_construct_renderer_id";
+
+function ~VRayValue() = "VRayValue_destruct";
+
+function VRay_Type VRayValue.getType() = "VRayValue_getType";
+function Size VRayValue.getCount() = "VRayValue_getCount";
+function Boolean VRayValue.isList() = "VRayValue_isList";
+function SInt32 VRayValue.getInt() = "VRayValue_getInt";
+function Float32 VRayValue.getFloat() = "VRayValue_getFloat";
+function Boolean VRayValue.getBool() = "VRayValue_getBool";
+function VRayColor VRayValue.getColor() = "VRayValue_getColor";
+function VRayAColor VRayValue.getAColor() = "VRayValue_getAColor";
+function VRayVector VRayValue.getVector() = "VRayValue_getVector";
+function VRayMatrix VRayValue.getMatrix() = "VRayValue_getMatrix";
+function VRayTransform VRayValue.getTransform() = "VRayValue_getTransform";
+function IntList[] VRayValue.getIntList() = "VRayValue_getIntList";
+function FloatList[] VRayValue.getFloatList() = "VRayValue_getFloatList";
+function ColorList[] VRayValue.getColorList() = "VRayValue_getColorList";
+function VectorList[] VRayValue.getVectorList() = "VRayValue_getVectorList";
+function ValueList[] VRayValue.getValueList() = "VRayValue_getValueList";
+function String VRayValue.getString() = "VRayValue_getString";
+function InstanceId VRayValue.getInstanceId() = "VRayValue_getInstanceId";
+function VRayPlugin VRayValue.getPlugin() = "VRayValue_getPlugin";
+function Boolean VRayValue.isOK() = "VRayValue_isOK";
+function Boolean VRayValue.isBad() = "VRayValue_isBad";
+function String VRayValue.getStringType() = "VRayValue_getStringType";
+function String VRayValue.toString() = "VRayValue_toString";
+

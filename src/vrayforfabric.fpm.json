@@ -1,0 +1,26 @@
+{
+    "libs": "vrayforfabric",
+    "code": [
+        "VRayVersion.kl",
+        "VRayInit.kl",
+        "VRayEnums.kl",
+        "VRayError.kl",
+        "VRayImage.kl",
+        "VRayPropertyMeta.kl",
+        "VRayPropertyRuntimeMeta.kl",
+        "VRayPluginMeta.kl",
+        "VRayPlugin.kl",
+        "VRayValue.kl",
+        "VRayTypes.kl",
+        "ImageRegion.kl",
+        "RenderElement.kl",
+        "RenderElements.kl",
+        "RendererOptions.kl",
+        "VRayRenderer.kl"
+    ],
+    "dfgPresets": {
+        "dir": "presets",
+        "presetPath": "ChaosGroup.Exts.VRay"
+    }
+}
+

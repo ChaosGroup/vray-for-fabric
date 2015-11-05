@@ -1,0 +1,63 @@
+
+struct ImageWriterFlags {
+    Boolean multipleFiles;
+    Boolean skipAlpha;
+    Boolean frameNumber;
+    Boolean noAlpha;
+    Boolean singleChannel;
+    Boolean skipRGB;
+    Boolean writeIntegerIDs;
+    Boolean velocityZeroBased;
+    Boolean multiChannel;
+    Boolean applyColorCorrections;
+};
+
+
+struct ImageWriterOptions {
+    ImageWriterFlags flags;
+    VRay_CompressionType compressionType;
+    SInt32 bitsPerChannel;
+};
+
+
+object VRayImage {
+    Data pointer;
+};
+
+
+function VRayImage (UInt32 width, UInt32 height) = "VRayImage_construct";
+function ~VRayImage() = "VRayImage_destruct";
+
+function UInt32 VRayImage.getWidth() = "VRayImage_getWidth_";
+function UInt32 VRayImage.getHeight() = "VRayImage_getHeight_";
+
+function Boolean VRayImage.getSize (io UInt32 width, io UInt32 height) = "VRayImage_getSize_";
+
+function VRayImage VRayImage.duplicate() = "VRayImage_duplicate_";
+function VRayImage VRayImage.crop (UInt32 x, UInt32 y, UInt32 width, UInt32 height) = "VRayImage_crop_";
+function VRayImage VRayImage.downscale (UInt32 width, UInt32 height) = "VRayImage_downscale_";
+function VRayImage VRayImage.downscale (UInt32 srcx, UInt32 srcy, UInt32 srcwidth, UInt32 srcheight, UInt32 dstwidth, UInt32 dstheight) = "VRayImage_downscale_variant1";
+function VRayImage VRayImage.fitIn (UInt32 width, UInt32 height) = "VRayImage_fitIn_";
+function VRayImage VRayImage.fitOut (UInt32 width, UInt32 height) = "VRayImage_fitOut_";
+function VRayImage VRayImage.cutIn (UInt32 width, UInt32 height) = "VRayImage_cutIn_";
+
+function Boolean VRayImage.draw (VRayImage image, UInt32 x, UInt32 y) = "VRayImage_draw_";
+function Boolean VRayImage.addColor (VRayColor color) = "VRayImage_addColor_";
+function Boolean VRayImage.addColor (VRayAColor color) = "VRayImage_addAColor_";
+function Boolean VRayImage.changeExposure (Float32 ev) = "VRayImage_changeExposure_";
+function Boolean VRayImage.changeGamma (Float32 gamma) = "VRayImage_changeGamma_";
+function Boolean VRayImage.changeContrast (Float32 contrast) = "VRayImage_changeContrast_";
+function Boolean VRayImage.makeNegative() = "VRayImage_makeNegative_";
+
+function Boolean VRayImage.saveToBmpFile?(String fileName, Boolean preserveAlpha) = "VRayImage_saveToBmpFile_";
+function Boolean VRayImage.saveToBmpFile?(String fileName, VRayRenderer renderer, Boolean preserveAlpha) = "VRayImage_saveToBmpFile_variant1";
+
+function Boolean VRayImage.saveToPngFile?(String fileName, Boolean preserveAlpha) = "VRayImage_saveToPngFile_";
+function Boolean VRayImage.saveToPngFile?(String fileName, VRayRenderer renderer, Boolean preserveAlpha) = "VRayImage_saveToPngFile_variant1";
+
+function Boolean VRayImage.saveToJpegFile?(String fileName, UInt32 quality) = "VRayImage_saveToJpegFile_";
+function Boolean VRayImage.saveToJpegFile?(String fileName, VRayRenderer renderer, UInt32 quality) = "VRayImage_saveToJpegFile_variant1";
+
+function Boolean VRayImage.saveToWebpFile?(String fileName, UInt32 quality) = "VRayImage_saveToWebpFile_";
+function Boolean VRayImage.saveToWebpFile?(String fileName, VRayRenderer renderer, UInt32 quality) = "VRayImage_saveToWebpFile_variant1";
+

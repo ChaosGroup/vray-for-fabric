@@ -1,0 +1,18 @@
+
+object ImageRegion {
+    Data pointer;
+};
+
+
+function ImageRegion() = "ImageRegion_construct";
+function ~ImageRegion() = "ImageRegion_destruct";
+
+function ImageRegion.set (UInt32 x, UInt32 y, UInt32 width, UInt32 height) = "ImageRegion_set";
+function ImageRegion.setX (UInt32 x) = "ImageRegion_setX";
+function ImageRegion.setY (UInt32 y) = "ImageRegion_setY";
+function ImageRegion.setWidth (UInt32 width) = "ImageRegion_setWidth";
+function ImageRegion.setHeight (UInt32 height) = "ImageRegion_setHeight";
+function UInt32 ImageRegion.getX() = "ImageRegion_getX";
+function UInt32 ImageRegion.getY() = "ImageRegion_getY";
+function UInt32 ImageRegion.getWidth() = "ImageRegion_getWidth";
+function UInt32 ImageRegion.getHeight() = "ImageRegion_getHeight";

@@ -1,0 +1,14 @@
+
+object VRayPropertyRuntimeMeta {
+    Data pointer;
+};
+
+
+function VRayPropertyRuntimeMeta() = "VRayPropertyRuntimeMeta_construct";
+function ~VRayPropertyRuntimeMeta() = "VRayPropertyRuntimeMeta_destruct";
+
+function UInt32 VRayPropertyRuntimeMeta.getRuntimeElementsCount() = "VRayPropertyRuntimeMeta_getRuntimeElementsCount";
+function VRay_Type VRayPropertyRuntimeMeta.getRuntimeType() = "VRayPropertyRuntimeMeta_getRuntimeType";
+function String VRayPropertyRuntimeMeta.getRuntimeTypeAsString() = "VRayPropertyRuntimeMeta_getRuntimeTypeAsString";
+
+
