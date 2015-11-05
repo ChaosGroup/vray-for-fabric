@@ -1,9 +1,8 @@
 stage/*
 build/*
-include/*
-presets/*
 .sconsign.dblite
 ./*.png
+./*.vrscene
 
 # Compiled Object files
 *.slo
