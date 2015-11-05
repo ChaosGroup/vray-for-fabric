@@ -1,3 +1,10 @@
+stage/*
+build/*
+include/*
+presets/*
+.sconsign.dblite
+./*.png
+
 # Compiled Object files
 *.slo
 *.lo
