@@ -3,6 +3,7 @@ build/*
 .sconsign.dblite
 ./*.png
 ./*.vrscene
+.hg*
 
 # Compiled Object files
 *.slo

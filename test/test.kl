@@ -12,25 +12,26 @@ operator entry() {
 
     VRayRenderer renderer (options);
 
+    report ("loading vrscene ...");
     Integer loaded = renderer.load ("test/test.vrscene");
-    if (loaded == 0) {
-        String names[] = renderer.getPluginNames();
-
-        for (Integer i; i < names.size(); i++) {
-            report (names[i]+": "+renderer.getPluginID (names[i]));
-        }
+    if (loaded != 0) {
+        report ("loading failed ... exiting.");
+        return;
     }
 
-    VRayPlugin plugin = renderer.getInstanceOf ("SettingsOptions");
+    String names[] = renderer.getPluginNames();
+
+    for (Integer i; i < names.size(); i++) {
+        report (names[i]+": "+renderer.getPluginID (names[i]));
+    }
+
+    VRayPlugin plugin = renderer.getInstanceOf ("GeomStaticMesh");
     report (plugin.getName());
+    VRayValue value = plugin.getValue("vertices");
+    report (value.getVectorList());
 
-    if (renderer.load ("test/test.vrscene") == 0) {
-        report ("Rendering ...");
-        renderer.run();
-    }
-    else {
-        report ("Render failed.");
-    }
+    report ("Rendering ...");
+    renderer.run();
 
     VRayImage image = renderer.getImage();
     image.saveToPngFile ("render.png", false);

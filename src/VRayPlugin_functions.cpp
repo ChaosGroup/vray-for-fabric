@@ -467,6 +467,23 @@ VRayPlugin_getTransform_variant1 (
 } // VRayPlugin_getTransform_variant1
 
 
+FABRIC_EXT_EXPORT void
+VRayPlugin_getValue (
+    KL::Traits< KL::VRayValue >::Result _result,
+    KL::Traits< KL::VRayPlugin >::INParam this_,
+    KL::Traits< KL::String >::INParam propertyName)
+{
+    V4F_TRY
+    VRay::Plugin *plugin = static_cast< VRay::Plugin* >(this_->pointer);
+
+    VRay::Value *value = new VRay::Value (plugin->getValue (propertyName.c_str()));
+
+    _result = KL::VRayValue::Create();
+    _result->pointer = value;
+    V4F_CATCH()
+} // VRayPlugin_getValue
+
+
 FABRIC_EXT_EXPORT KL::Boolean
 VRayPlugin_isAnimated (
     KL::Traits< KL::VRayPlugin >::INParam this_,

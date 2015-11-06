@@ -36,7 +36,7 @@ function VRayMatrix VRayPlugin.getMatrix (String propertyName) = "VRayPlugin_get
 function VRayMatrix VRayPlugin.getMatrix (String propertyName, io Boolean ok) = "VRayPlugin_getMatrix_variant1";
 function VRayTransform VRayPlugin.getTransform (String propertyName) = "VRayPlugin_getTransform";
 function VRayTransform VRayPlugin.getTransform (String propertyName, io Boolean ok) = "VRayPlugin_getTransform_variant1";
-//function VRayValue VRayPlugin.getValue (String propertyName) = "VRayPlugin_getValue";
+function VRayValue VRayPlugin.getValue (String propertyName) = "VRayPlugin_getValue";
 
 function Boolean VRayPlugin.isAnimated (String propertyName) = "VRayPlugin_isAnimated";
 
