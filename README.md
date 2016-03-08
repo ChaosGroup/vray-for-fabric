@@ -5,7 +5,7 @@ This project wraps the V-Ray Application SDK and provides bindings to Fabric Eng
 The documentation and examples below assume a Linux environment.
 ## Requirements
 - latest build of V-Ray Application SDK.
-- [Fabric Engine](http://fabricengine.com/get-fabric/) 2.0.x
+- [Fabric Engine](http://fabricengine.com/get-fabric/) 2.1.x
 - Python 2.7.x
 - [SCons](https://scons.org/) build system.
 
@@ -59,14 +59,15 @@ scons -c
 ## Test
 In order to test vray-for-fabric, a few environment variables need to be appended and a couple new ones set. This can be accomplished by sourcing the shell script `source.sh` located in the `./test` directory.
 ```
-source ./test/source.sh
+cd ./test
+source ./source.sh
 ```
 ### Commandline test using the `kl` tool:
-This test will load the `./test/test.vrscene` and generate a `render.png` file and re-export the vrscene as `dump.vrscene`.
+This test will load the `test.vrscene` and generate a `render.png` file and re-export the vrscene as `dump.vrscene`.
 ```
-kl ./test/test.kl
+kl test.kl
 ```
 ### GUI test using the `canvas` application:
 ```
-canvas ./test/test.canvas
+canvas test.canvas
 ```
