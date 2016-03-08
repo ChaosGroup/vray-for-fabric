@@ -21,18 +21,6 @@ RenderElement_destruct (KL::Traits< KL::RenderElement >::IOParam this_)
 } // RenderElement_destruct
 
 
-FABRIC_EXT_EXPORT KL::UInt32
-RenderElement_getIndex (KL::Traits< KL::RenderElement >::INParam this_)
-{
-    V4F_TRY
-    VRay::RenderElement *elem = static_cast< VRay::RenderElement* >(this_->pointer);
-
-    return convert< KL::UInt32 >(elem->getIndex());
-
-    V4F_CATCH (-1)
-} // RenderElement_getIndex
-
-
 FABRIC_EXT_EXPORT void
 RenderElement_getName (
     KL::Traits< KL::String >::Result _result,

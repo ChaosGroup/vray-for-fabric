@@ -72,29 +72,29 @@ VRayRenderer_getLastParserError (
 
 
 FABRIC_EXT_EXPORT KL::UInt64
-VRayRenderer_getPluginID (
+VRayRenderer_getPluginId (
     KL::Traits< KL::VRayRenderer >::INParam this_,
     KL::Traits< KL::String >::INParam pluginName)
 {
     V4F_TRY
     VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
 
-    return convert< KL::UInt64 >(renderer->getPluginID (pluginName.c_str()));
+    return convert< KL::UInt64 >(renderer->getPluginId (pluginName.c_str()));
 
     V4F_CATCH (-1)
-} // VRayRenderer_getPluginID
+} // VRayRenderer_getPluginId
 
 
 FABRIC_EXT_EXPORT void
 VRayRenderer_getPluginName (
     KL::Traits< KL::String >::Result _result,
     KL::Traits< KL::VRayRenderer >::INParam this_,
-    KL::Traits< KL::UInt64 >::INParam pluginID)
+    KL::Traits< KL::UInt64 >::INParam pluginId)
 {
     V4F_TRY
     VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
 
-    _result = renderer->getPluginName (convert< long long >(pluginID)).c_str();
+    _result = renderer->getPluginName (convert< long long >(pluginId));
     V4F_CATCH()
 } // VRayRenderer_getPluginName
 
@@ -125,45 +125,6 @@ VRayRenderer_getRenderMode (KL::Traits< KL::VRayRenderer >::INParam this_)
 } // VRayRenderer_getRenderMode
 
 
-FABRIC_EXT_EXPORT void
-VRayRenderer_showFrameBuffer (
-    Fabric::EDK::KL::Traits< Fabric::EDK::KL::VRayRenderer >::INParam this_,
-    Fabric::EDK::KL::Traits< Fabric::EDK::KL::Boolean >::INParam visible)
-{
-    V4F_TRY
-    VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    renderer->showFrameBuffer (convert< bool >(visible));
-    V4F_CATCH()
-} // VRayRenderer_showFrameBuffer
-
-
-FABRIC_EXT_EXPORT void
-VRayRenderer_showFrameBuffer_variant1 (
-    Fabric::EDK::KL::Traits< Fabric::EDK::KL::VRayRenderer >::INParam this_,
-    Fabric::EDK::KL::Traits< Fabric::EDK::KL::Boolean >::INParam visible,
-    Fabric::EDK::KL::Traits< Fabric::EDK::KL::Boolean >::INParam setFocus)
-{
-    V4F_TRY
-    VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    renderer->showFrameBuffer (convert< bool >(visible), convert< bool >(setFocus));
-    V4F_CATCH()
-} // VRayRenderer_showFrameBuffer_variant1
-
-
-FABRIC_EXT_EXPORT KL::Boolean
-VRayRenderer_isFrameBufferShown (KL::Traits< KL::VRayRenderer >::INParam this_)
-{
-    V4F_TRY
-    VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    return convert< KL::Boolean >(renderer->isFrameBufferShown());
-
-    V4F_CATCH (false)
-} // VRayRenderer_isFrameBufferShown
-
-
 FABRIC_EXT_EXPORT KL::Boolean
 VRayRenderer_setOptions (
     KL::Traits< KL::VRayRenderer >::INParam this_,
@@ -192,42 +153,6 @@ VRayRenderer_getOptions (
     _result->pointer = options;
     V4F_CATCH()
 } // VRayRenderer_getOptions
-
-
-FABRIC_EXT_EXPORT void
-VRayRenderer_enableVFBInteractivity (KL::Traits< KL::VRayRenderer >::INParam this_)
-{
-    V4F_TRY
-    VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    renderer->enableVFBInteractivity();
-    V4F_CATCH()
-} // VRayRenderer_enableVFBInteractivity
-
-
-FABRIC_EXT_EXPORT void
-VRayRenderer_enableVFBInteractivity_variant1 (
-    KL::Traits< KL::VRayRenderer >::INParam this_,
-    KL::Traits< KL::Boolean >::INParam enable)
-{
-    V4F_TRY
-    VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    renderer->enableVFBInteractivity (convert< bool >(enable));
-    V4F_CATCH()
-} // VRayRenderer_enableVFBInteractivity_variant1
-
-
-FABRIC_EXT_EXPORT KL::Boolean
-VRayRenderer_isVFBInteractivityEnabled (KL::Traits< KL::VRayRenderer >::INParam this_)
-{
-    V4F_TRY
-    VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    return convert< KL::Boolean >(renderer->isVFBInteractivityEnabled());
-
-    V4F_CATCH (false)
-} // VRayRenderer_isVFBInteractivityEnabled
 
 
 FABRIC_EXT_EXPORT KL::SInt32
@@ -530,27 +455,19 @@ VRayRenderer_setImageSize (
 FABRIC_EXT_EXPORT KL::Boolean
 VRayRenderer_setRenderRegion (
     KL::Traits< KL::VRayRenderer >::INParam this_,
-    KL::Traits< KL::SInt32 >::INParam srcX,
-    KL::Traits< KL::SInt32 >::INParam srcY,
-    KL::Traits< KL::SInt32 >::INParam srcWidth,
-    KL::Traits< KL::SInt32 >::INParam srcHeight,
-    KL::Traits< KL::SInt32 >::INParam destX,
-    KL::Traits< KL::SInt32 >::INParam destY,
-    KL::Traits< KL::SInt32 >::INParam destWidth,
-    KL::Traits< KL::SInt32 >::INParam destHeight)
+    KL::Traits< KL::SInt32 >::INParam rgnLeft,
+    KL::Traits< KL::SInt32 >::INParam rgnTop,
+    KL::Traits< KL::SInt32 >::INParam rgnWidth,
+    KL::Traits< KL::SInt32 >::INParam rgnHeight)
 {
     V4F_TRY
     VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
 
     return convert< KL::Boolean >(renderer->setRenderRegion (
-                                      convert< int >(srcX),
-                                      convert< int >(srcY),
-                                      convert< int >(srcWidth),
-                                      convert< int >(srcHeight),
-                                      convert< int >(destX),
-                                      convert< int >(destY),
-                                      convert< int >(destWidth),
-                                      convert< int >(destHeight)));
+                                      convert< int >(rgnLeft),
+                                      convert< int >(rgnTop),
+                                      convert< int >(rgnWidth),
+                                      convert< int >(rgnHeight)));
 
     V4F_CATCH (false)
 } // VRayRenderer_setRenderRegion
@@ -1084,12 +1001,12 @@ FABRIC_EXT_EXPORT void
 VRayRenderer_getPlugin_byid (
     KL::Traits< KL::VRayPlugin >::Result _result,
     KL::Traits< KL::VRayRenderer >::INParam this_,
-    KL::Traits< KL::UInt64 >::INParam pluginID)
+    KL::Traits< KL::UInt64 >::INParam pluginId)
 {
     V4F_TRY
     VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
 
-    VRay::Plugin *plugin = new VRay::Plugin (renderer->getPlugin (convert< VRay::InstanceId >(pluginID)));
+    VRay::Plugin *plugin = new VRay::Plugin (renderer->getPlugin (convert< VRay::InstanceId >(pluginId)));
 
     _result = KL::VRayPlugin::Create();
     _result->pointer = plugin;
@@ -1256,82 +1173,6 @@ VRayRenderer_removePlugin (
 } // VRayRenderer_removePlugin
 
 
-FABRIC_EXT_EXPORT void
-VRayRenderer_getPluginPtr_byname (
-    KL::Traits< KL::VRayPlugin >::Result _result,
-    KL::Traits< KL::VRayRenderer >::INParam this_,
-    KL::Traits< KL::String >::INParam pluginName)
-{
-    V4F_TRY
-    VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    _result = KL::VRayPlugin::Create();
-    _result->pointer = renderer->getPluginPtr (pluginName.c_str());
-    V4F_CATCH()
-} // VRayRenderer_getPluginPtr_byname
-
-
-FABRIC_EXT_EXPORT void
-VRayRenderer_getPluginPtr_byid (
-    KL::Traits< KL::VRayPlugin >::Result _result,
-    KL::Traits< KL::VRayRenderer >::INParam this_,
-    KL::Traits< KL::UInt64 >::INParam pluginID)
-{
-    V4F_TRY
-    VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    _result = KL::VRayPlugin::Create();
-    _result->pointer = renderer->getPluginPtr (convert< VRay::InstanceId >(pluginID));
-    V4F_CATCH()
-} // VRayRenderer_getPluginPtr_byid
-
-
-FABRIC_EXT_EXPORT void
-VRayRenderer_pickPluginPtr (
-    KL::Traits< KL::VRayPlugin >::Result _result,
-    KL::Traits< KL::VRayRenderer >::INParam this_,
-    KL::Traits< KL::SInt32 >::INParam x,
-    KL::Traits< KL::SInt32 >::INParam y)
-{
-    V4F_TRY
-    VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    _result = KL::VRayPlugin::Create();
-    _result->pointer = renderer->pickPluginPtr (convert< int >(x), convert< int >(y));
-    V4F_CATCH()
-} // VRayRenderer_pickPluginPtr
-
-
-FABRIC_EXT_EXPORT void
-VRayRenderer_pickPluginPtr_timeout (
-    KL::Traits< KL::VRayPlugin >::Result _result,
-    KL::Traits< KL::VRayRenderer >::INParam this_,
-    KL::Traits< KL::SInt32 >::INParam x,
-    KL::Traits< KL::SInt32 >::INParam y,
-    KL::Traits< KL::SInt32 >::INParam timeout)
-{
-    V4F_TRY
-    VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    _result = KL::VRayPlugin::Create();
-    _result->pointer = renderer->pickPluginPtr (convert< int >(x), convert< int >(y), convert< int >(timeout));
-    V4F_CATCH()
-} // VRayRenderer_pickPluginPtr_timeout
-
-
-FABRIC_EXT_EXPORT void
-VRayRenderer_freePluginPtr (
-    KL::Traits< KL::VRayRenderer >::INParam this_,
-    KL::Traits< KL::VRayPlugin >::INParam ptr)
-{
-    V4F_TRY
-    VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    renderer->freePluginPtr (static_cast< VRay::Plugin* >(ptr->pointer));
-    V4F_CATCH()
-} // VRayRenderer_freePluginPtr
-
-
 FABRIC_EXT_EXPORT KL::Boolean
 VRayRenderer_pluginExists_byname (
     KL::Traits< KL::VRayRenderer >::INParam this_,
@@ -1351,12 +1192,12 @@ VRayRenderer_pluginExists_byname (
 FABRIC_EXT_EXPORT KL::Boolean
 VRayRenderer_pluginExists_byid (
     KL::Traits< KL::VRayRenderer >::INParam this_,
-    KL::Traits< KL::UInt64 >::INParam pluginID)
+    KL::Traits< KL::UInt64 >::INParam pluginId)
 {
     V4F_TRY
     VRay::VRayRenderer *renderer = static_cast< VRay::VRayRenderer* >(this_->pointer);
 
-    bool result = renderer->pluginExists (convert< VRay::InstanceId >(pluginID));
+    bool result = renderer->pluginExists (convert< VRay::InstanceId >(pluginId));
 
     return convert< KL::Boolean >(result);
 

@@ -19,32 +19,17 @@ VRayPlugin_construct (KL::Traits< KL::VRayPlugin >::IOParam this_)
 } // VRayPlugin_construct
 
 
-FABRIC_EXT_EXPORT void
-VRayPlugin_construct_variant1 (
-    KL::Traits< KL::VRayPlugin >::IOParam this_,
-    KL::Traits< KL::VRayRenderer >::INParam renderer,
-    KL::Traits< KL::String >::INParam name)
-{
-    V4F_TRY
-    VRay::VRayRenderer *rndr = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    this_->pointer = (void*) new VRay::Plugin (rndr, std::string (name.c_str()));
-    V4F_CATCH()
-} // VRayPlugin_construct_variant1
-
-
-FABRIC_EXT_EXPORT void
-VRayPlugin_construct_variant2 (
-    KL::Traits< KL::VRayPlugin >::IOParam this_,
-    KL::Traits< KL::VRayRenderer >::INParam renderer,
-    KL::Traits< KL::UInt64 >::INParam id)
-{
-    V4F_TRY
-    VRay::VRayRenderer *rndr = static_cast< VRay::VRayRenderer* >(this_->pointer);
-
-    this_->pointer = (void*) new VRay::Plugin (rndr, static_cast< VRay::InstanceId >(id));
-    V4F_CATCH()
-} // VRayPlugin_construct_variant2
+//FABRIC_EXT_EXPORT void
+//VRayPlugin_construct_variant1 (
+//    KL::Traits< KL::VRayPlugin >::IOParam this_,
+//    KL::Traits< KL::VRayPlugin >::INParam plugin)
+//{
+//    V4F_TRY
+//    VRay::Plugin *plgn = static_cast< VRay::Plugin* >(plugin->pointer);
+//
+//    this_->pointer = (void*) new VRay::Plugin (*plgn);
+//    V4F_CATCH()
+//} // VRayPlugin_construct_variant1
 
 
 FABRIC_EXT_EXPORT void
@@ -79,7 +64,7 @@ VRayPlugin_getName (
     V4F_TRY
     VRay::Plugin *plugin = static_cast< VRay::Plugin* >(this_->pointer);
 
-    _result = plugin->getName().c_str();
+    _result = plugin->getName();
     V4F_CATCH()
 } // VRayPlugin_getName
 
@@ -92,7 +77,7 @@ VRayPlugin_getType (
     V4F_TRY
     VRay::Plugin *plugin = static_cast< VRay::Plugin* >(this_->pointer);
 
-    _result = plugin->getType().c_str();
+    _result = plugin->getType();
     V4F_CATCH()
 } // VRayPlugin_getType
 

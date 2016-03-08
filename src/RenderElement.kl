@@ -13,7 +13,6 @@ object RenderElement {
 function RenderElement() = "RenderElement_construct";
 function ~RenderElement() = "RenderElement_destruct";
 
-function UInt32 RenderElement.getIndex() = "RenderElement_getIndex";
 function String RenderElement.getName() = "RenderElement_getName";
 function VRay_RenderElementType RenderElement.getType() = "RenderElement_getType";
 function VRay_RenderElementBinaryFormat RenderElement.getBinaryFormat() = "RenderElement_getBinaryFormat";

@@ -8,7 +8,5 @@ object RenderElements {
 function RenderElements() = "RenderElements_construct";
 function ~RenderElements() = "RenderElements_destruct";
 
-function UInt32 RenderElements.getCount() = "RenderElements_getCount";
-function RenderElement RenderElements.get (UInt32 index) = "RenderElements_get";
 function RenderElement RenderElements.getByType (VRay_RenderElementType type) = "RenderElements_getByType";
 

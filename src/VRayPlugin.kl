@@ -5,8 +5,7 @@ object VRayPlugin {
 
 
 function VRayPlugin() = "VRayPlugin_construct";
-function VRayPlugin (VRayRenderer renderer, String name) = "VRayPlugin_construct_variant1";
-function VRayPlugin (VRayRenderer renderer, InstanceId id) = "VRayPlugin_construct_variant2";
+//function VRayPlugin (VRayPlugin plugin) = "VRayPlugin_construct_variant1";
 function ~VRayPlugin() = "VRayPlugin_destruct";
 
 function VRayRenderer VRayPlugin.getRenderer() = "VRayPlugin_getRenderer";

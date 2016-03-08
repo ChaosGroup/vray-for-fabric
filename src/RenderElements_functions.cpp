@@ -27,34 +27,6 @@ RenderElements_destruct (KL::Traits< KL::RenderElements >::IOParam this_)
 } // RenderElements_destruct
 
 
-FABRIC_EXT_EXPORT KL::UInt32
-RenderElements_getCount (KL::Traits< KL::RenderElements >::INParam this_)
-{
-    V4F_TRY
-    VRay::RenderElements *elems = static_cast< VRay::RenderElements* >(this_->pointer);
-
-    return convert< KL::UInt32 >(elems->getCount());
-
-    V4F_CATCH (-1)
-} // RenderElements_getCount
-
-
-FABRIC_EXT_EXPORT void
-RenderElements_get (
-    KL::Traits< KL::RenderElement >::Result _result,
-    KL::Traits< KL::RenderElements >::INParam this_,
-    KL::Traits< KL::UInt32 >::INParam index)
-{
-    V4F_TRY
-    VRay::RenderElements *elems = static_cast< VRay::RenderElements* >(this_->pointer);
-    VRay::RenderElement elem = elems->get (convert< int >(index));
-
-    _result = KL::RenderElement::Create();
-    _result->pointer = &elem;
-    V4F_CATCH()
-} // RenderElements_get
-
-
 FABRIC_EXT_EXPORT void
 RenderElements_getByType (
     KL::Traits< KL::RenderElement >::Result _result,

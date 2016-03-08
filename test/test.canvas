@@ -1,15 +1,14 @@
 {
   "objectType" : "Graph",
   "metadata" : {
-    "camera_mat44" : "{\n  \"row0\" : {\n    \"x\" : 0.7999998331069946,\n    \"y\" : -0.2228345572948456,\n    \"z\" : 0.5570861101150513,\n    \"t\" : 27.47999954223633\n    },\n  \"row1\" : {\n    \"x\" : 0,\n    \"y\" : 0.9284765720367432,\n    \"z\" : 0.3713908195495605,\n    \"t\" : 18.31999969482422\n    },\n  \"row2\" : {\n    \"x\" : -0.6000002026557922,\n    \"y\" : -0.2971125841140747,\n    \"z\" : 0.7427811026573181,\n    \"t\" : 36.6400032043457\n    },\n  \"row3\" : {\n    \"x\" : 0,\n    \"y\" : 0,\n    \"z\" : 0,\n    \"t\" : 1\n    }\n  }",
+    "timeline_timerFps" : "1000",
+    "camera_mat44" : "{\n  \"row0\" : {\n    \"x\" : 0.7999998927116394,\n    \"y\" : -0.2228344827890396,\n    \"z\" : 0.557086169719696,\n    \"t\" : 30\n    },\n  \"row1\" : {\n    \"x\" : 0,\n    \"y\" : 0.9284766912460327,\n    \"z\" : 0.3713907301425934,\n    \"t\" : 20\n    },\n  \"row2\" : {\n    \"x\" : -0.6000002026557922,\n    \"y\" : -0.2971125543117523,\n    \"z\" : 0.7427812814712524,\n    \"t\" : 40\n    },\n  \"row3\" : {\n    \"x\" : 0,\n    \"y\" : 0,\n    \"z\" : 0,\n    \"t\" : 1\n    }\n  }",
     "timeline_start" : "1",
-    "timeline_loopMode" : "0",
-    "uiGraphZoom" : "{\n  \"value\" : 0.9232011437416077\n  }",
+    "timeline_loopMode" : "1",
     "timeline_simMode" : "0",
-    "camera_focalDistance" : "49.32810974121094",
+    "camera_focalDistance" : "53.85164642333984",
     "timeline_current" : "1",
-    "timeline_end" : "50",
-    "uiGraphPan" : "{\n  \"x\" : -142.2211151123047,\n  \"y\" : 38.75022506713867\n  }"
+    "timeline_end" : "50"
     },
   "title" : "",
   "ports" : [
@@ -19,34 +18,6 @@
       "name" : "exec",
       "execPortType" : "In",
       "typeSpec" : "Execute"
-      },
-    {
-      "objectType" : "Port",
-      "nodePortType" : "In",
-      "name" : "value",
-      "execPortType" : "Out",
-      "typeSpec" : "String[]"
-      },
-    {
-      "objectType" : "Port",
-      "nodePortType" : "In",
-      "name" : "value_3",
-      "execPortType" : "Out",
-      "typeSpec" : "Boolean"
-      },
-    {
-      "objectType" : "Port",
-      "nodePortType" : "In",
-      "name" : "value_2",
-      "execPortType" : "Out",
-      "typeSpec" : "VRay_RenderMode"
-      },
-    {
-      "objectType" : "Port",
-      "nodePortType" : "In",
-      "name" : "value_4",
-      "execPortType" : "Out",
-      "typeSpec" : "SInt32"
       }
     ],
   "extDeps" : {},
@@ -54,112 +25,9 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\":532.0,\"y\":73.0}"
+        "uiGraphPos" : "{\"x\":219.0,\"y\":58.0}"
         },
-      "name" : "VRayRenderer",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "IO",
-          "name" : "exec"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "Out",
-          "name" : "result"
-          }
-        ],
-      "executable" : "ChaosGroup.Exts.VRay.VRayRenderer.VRayRenderer",
-      "presetGUID" : "5A5160AF3849C3316BB0447DAD68AB07"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\":718.0,\"y\":339.0}",
-        "uiCollapsedState" : "0"
-        },
-      "name" : "SetRenderMode",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "IO",
-          "name" : "exec"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "this"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "mode"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "Out",
-          "name" : "result"
-          }
-        ],
-      "executable" : "ChaosGroup.Exts.VRay.VRayRenderer.SetRenderMode",
-      "presetGUID" : "4527DA81E4C8E35F271FAAF0AAB45874"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\":179.0,\"y\":191.0}"
-        },
-      "name" : "VRayRENDERMODEPRODUCTION",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "Out",
-          "name" : "value"
-          }
-        ],
-      "executable" : "ChaosGroup.Exts.VRay.Constants.VRay_RENDER_MODE_PRODUCTION",
-      "presetGUID" : "220F09F79B55D4039806733D199BC226"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\":813.0,\"y\":1.0}"
-        },
-      "name" : "Load",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "IO",
-          "name" : "exec"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "this"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "defaultValues" : {
-            "String" : "/home/parker/repos/vray-for-fabric/test/test.vrscene"
-            },
-          "name" : "fileName"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "Out",
-          "name" : "result"
-          }
-        ],
-      "executable" : "ChaosGroup.Exts.VRay.VRayRenderer.Load",
-      "presetGUID" : "43E2728CC9EC16AE1F4CA6DCD546F362"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\":245.0,\"y\":36.0}"
-        },
-      "name" : "VRayInit",
+      "name" : "VRayInit_1",
       "ports" : [
         {
           "objectType" : "InstPort",
@@ -183,19 +51,14 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\":1025.740112304688,\"y\":416.4786376953125}"
+        "uiGraphPos" : "{\"x\":503.0,\"y\":91.0}"
         },
-      "name" : "GetRenderMode",
+      "name" : "VRayRenderer_1",
       "ports" : [
         {
           "objectType" : "InstPort",
           "nodePortType" : "IO",
           "name" : "exec"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "this"
           },
         {
           "objectType" : "InstPort",
@@ -203,94 +66,15 @@
           "name" : "result"
           }
         ],
-      "executable" : "ChaosGroup.Exts.VRay.VRayRenderer.GetRenderMode",
-      "presetGUID" : "DA248DBEDAE90A435534BC7440D49647"
+      "executable" : "VRayRenderer.VRayRenderer",
+      "presetGUID" : "5A5160AF3849C3316BB0447DAD68AB07"
       },
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\":1824.002197265625,\"y\":455.4142456054688}"
+        "uiGraphPos" : "{\"x\":720.0,\"y\":6.0}"
         },
-      "name" : "Report",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "value"
-          }
-        ],
-      "executable" : "Fabric.Core.Func.Report",
-      "presetGUID" : "E9448726588111C443C34B2F3D9B0172"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\":1116.408935546875,\"y\":33.25485229492188}"
-        },
-      "name" : "GetPluginNames",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "IO",
-          "name" : "exec"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "this"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "Out",
-          "name" : "result"
-          }
-        ],
-      "executable" : "ChaosGroup.Exts.VRay.VRayRenderer.GetPluginNames",
-      "presetGUID" : "73F327E468E0FF836A4DE2E16BF89044"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\":1437.0,\"y\":9.0}"
-        },
-      "name" : "Report_2",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "value"
-          }
-        ],
-      "executable" : "Fabric.Core.Func.Report",
-      "presetGUID" : "E9448726588111C443C34B2F3D9B0172"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\":1476.0,\"y\":228.0}"
-        },
-      "name" : "Run",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "IO",
-          "name" : "exec"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "this"
-          }
-        ],
-      "executable" : "ChaosGroup.Exts.VRay.VRayRenderer.Run",
-      "presetGUID" : "5644A522594FC7FF46023906AF276582"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\":1689.0,\"y\":285.0}"
-        },
-      "name" : "SaveImage",
+      "name" : "Load_1",
       "ports" : [
         {
           "objectType" : "InstPort",
@@ -306,7 +90,151 @@
           "objectType" : "InstPort",
           "nodePortType" : "In",
           "defaultValues" : {
-            "String" : "/home/parker/dump.png"
+            "String" : "test.vrscene"
+            },
+          "name" : "fileName"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "VRayRenderer.Load",
+      "presetGUID" : "43E2728CC9EC16AE1F4CA6DCD546F362"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":1021.0,\"y\":52.0}"
+        },
+      "name" : "GetPluginNames_1",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "IO",
+          "name" : "exec"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "VRayRenderer.GetPluginNames",
+      "presetGUID" : "73F327E468E0FF836A4DE2E16BF89044"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":1835.0,\"y\":10.0}"
+        },
+      "name" : "Report_1",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "value"
+          }
+        ],
+      "executable" : "Fabric.Core.Func.Report",
+      "presetGUID" : "E9448726588111C443C34B2F3D9B0172"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":841.0,\"y\":362.0}"
+        },
+      "name" : "VRay_RENDER_MODE_PRODUCTION_1",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "value"
+          }
+        ],
+      "executable" : "ChaosGroup.Exts.VRay.Constants.VRay_RENDER_MODE_PRODUCTION",
+      "presetGUID" : "220F09F79B55D4039806733D199BC226"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":1223.0,\"y\":311.0}"
+        },
+      "name" : "SetRenderMode_1",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "IO",
+          "name" : "exec"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "mode"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "Out",
+          "name" : "result"
+          }
+        ],
+      "executable" : "VRayRenderer.SetRenderMode",
+      "presetGUID" : "4527DA81E4C8E35F271FAAF0AAB45874"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":1532.0,\"y\":115.0}"
+        },
+      "name" : "Run_1",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "IO",
+          "name" : "exec"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          }
+        ],
+      "executable" : "VRayRenderer.Run",
+      "presetGUID" : "5644A522594FC7FF46023906AF276582"
+      },
+    {
+      "objectType" : "Inst",
+      "metadata" : {
+        "uiGraphPos" : "{\"x\":2193.0,\"y\":235.0}"
+        },
+      "name" : "SaveImage_1",
+      "ports" : [
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "IO",
+          "name" : "exec"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "name" : "this"
+          },
+        {
+          "objectType" : "InstPort",
+          "nodePortType" : "In",
+          "defaultValues" : {
+            "String" : "output_from_canvas.png"
             },
           "name" : "fileName"
           },
@@ -321,49 +249,15 @@
           "name" : "result"
           }
         ],
-      "executable" : "ChaosGroup.Exts.VRay.VRayRenderer.SaveImage",
+      "executable" : "VRayRenderer.SaveImage",
       "presetGUID" : "F39220B6D95053FF02EA95BED546CBB4"
       },
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\":1572.078247070312,\"y\":89.001708984375}"
+        "uiGraphPos" : "{\"x\":1946.0,\"y\":349.0}"
         },
-      "name" : "ExportScene",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "IO",
-          "name" : "exec"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "this"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "defaultValues" : {
-            "String" : "/home/parker/dump.vrscene"
-            },
-          "name" : "fileName"
-          },
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "Out",
-          "name" : "result"
-          }
-        ],
-      "executable" : "ChaosGroup.Exts.VRay.VRayRenderer.ExportScene",
-      "presetGUID" : "10181DADA1391850B3A052C2282B9775"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\":1475.0,\"y\":350.0}"
-        },
-      "name" : "ImageWriterOptions",
+      "name" : "ComposeImageWriterOptions_1",
       "ports" : [
         {
           "objectType" : "InstPort",
@@ -379,7 +273,7 @@
           "objectType" : "InstPort",
           "nodePortType" : "In",
           "defaultValues" : {
-            "SInt32" : 4
+            "SInt32" : 8
             },
           "name" : "bitsPerChannel"
           },
@@ -395,10 +289,9 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\":1143.0,\"y\":306.0}",
-        "uiCollapsedState" : "1"
+        "uiGraphPos" : "{\"x\":1479.0,\"y\":197.0}"
         },
-      "name" : "ImageWriterFlags",
+      "name" : "ComposeImageWriterFlags_1",
       "ports" : [
         {
           "objectType" : "InstPort",
@@ -408,6 +301,9 @@
         {
           "objectType" : "InstPort",
           "nodePortType" : "In",
+          "defaultValues" : {
+            "Boolean" : true
+            },
           "name" : "skipAlpha"
           },
         {
@@ -462,9 +358,9 @@
     {
       "objectType" : "Inst",
       "metadata" : {
-        "uiGraphPos" : "{\"x\":1201.717041015625,\"y\":383.67236328125}"
+        "uiGraphPos" : "{\"x\":1687.0,\"y\":311.0}"
         },
-      "name" : "VRayNOCOMPRESSION",
+      "name" : "VRay_NO_COMPRESSION_1",
       "ports" : [
         {
           "objectType" : "InstPort",
@@ -474,115 +370,99 @@
         ],
       "executable" : "ChaosGroup.Exts.VRay.Constants.VRay_NO_COMPRESSION",
       "presetGUID" : "0BA77CD2402928AC65F0AEE756D5C85C"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\":1910.397583007812,\"y\":252.2427368164062}"
-        },
-      "name" : "Report_3",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "value"
-          }
-        ],
-      "executable" : "Fabric.Core.Func.Report",
-      "presetGUID" : "E9448726588111C443C34B2F3D9B0172"
-      },
-    {
-      "objectType" : "Inst",
-      "metadata" : {
-        "uiGraphPos" : "{\"x\":1801.578491210938,\"y\":69.59445953369141}"
-        },
-      "name" : "Report_4",
-      "ports" : [
-        {
-          "objectType" : "InstPort",
-          "nodePortType" : "In",
-          "name" : "value"
-          }
-        ],
-      "executable" : "Fabric.Core.Func.Report",
-      "presetGUID" : "E9448726588111C443C34B2F3D9B0172"
       }
     ],
   "connections" : {
     "exec" : [
-      "VRayInit.exec"
+      "VRayInit_1.exec"
       ],
-    "VRayRenderer.exec" : [
-      "Load.exec",
-      "SetRenderMode.exec"
+    "VRayInit_1.exec" : [
+      "VRayRenderer_1.exec"
       ],
-    "VRayRenderer.result" : [
-      "SetRenderMode.this",
-      "Load.this",
-      "GetRenderMode.this",
-      "GetPluginNames.this",
-      "Run.this",
-      "ExportScene.this",
-      "SaveImage.this"
+    "VRayRenderer_1.exec" : [
+      "Load_1.exec"
       ],
-    "SetRenderMode.exec" : [
-      "GetRenderMode.exec"
+    "VRayRenderer_1.result" : [
+      "Load_1.this",
+      "GetPluginNames_1.this",
+      "SetRenderMode_1.this",
+      "Run_1.this",
+      "SaveImage_1.this"
       ],
-    "VRayRENDERMODEPRODUCTION.value" : [
-      "SetRenderMode.mode"
+    "Load_1.exec" : [
+      "GetPluginNames_1.exec"
       ],
-    "Load.exec" : [
-      "GetPluginNames.exec"
+    "GetPluginNames_1.exec" : [
+      "SetRenderMode_1.exec"
       ],
-    "VRayInit.exec" : [
-      "VRayRenderer.exec"
+    "GetPluginNames_1.result" : [
+      "Report_1.value"
       ],
-    "GetRenderMode.result" : [
-      "Report.value"
+    "VRay_RENDER_MODE_PRODUCTION_1.value" : [
+      "SetRenderMode_1.mode"
       ],
-    "Report.value" : [
-      "value_2"
+    "SetRenderMode_1.exec" : [
+      "Run_1.exec"
       ],
-    "GetPluginNames.exec" : [
-      "Run.exec",
-      "ExportScene.exec"
+    "Run_1.exec" : [
+      "SaveImage_1.exec"
       ],
-    "GetPluginNames.result" : [
-      "Report_2.value"
+    "ComposeImageWriterOptions_1.result" : [
+      "SaveImage_1.options"
       ],
-    "Report_2.value" : [
-      "value"
+    "ComposeImageWriterFlags_1.result" : [
+      "ComposeImageWriterOptions_1.flags"
       ],
-    "Run.exec" : [
-      "SaveImage.exec"
-      ],
-    "SaveImage.result" : [
-      "Report_3.value"
-      ],
-    "ExportScene.result" : [
-      "Report_4.value"
-      ],
-    "ImageWriterOptions.result" : [
-      "SaveImage.options"
-      ],
-    "ImageWriterFlags.result" : [
-      "ImageWriterOptions.flags"
-      ],
-    "VRayNOCOMPRESSION.value" : [
-      "ImageWriterOptions.compressionType"
-      ],
-    "Report_3.value" : [
-      "value_3"
-      ],
-    "Report_4.value" : [
-      "value_4"
+    "VRay_NO_COMPRESSION_1.value" : [
+      "ComposeImageWriterOptions_1.compressionType"
       ]
     },
   "requiredPresets" : {
-    "ChaosGroup.Exts.VRay.VRayRenderer.VRayRenderer" : {
+    "ChaosGroup.Exts.VRay.VRayInit.VRayInit" : {
       "objectType" : "Func",
       "metadata" : {
-        "uiTooltip" : "\n\n Supported by VRayRenderer"
+        "uiTooltip" : "Supported types:\n  enableFrameBuffer: Boolean\n  result: VRayInit\n"
+        },
+      "title" : "VRayInit",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "IO",
+          "name" : "exec",
+          "execPortType" : "IO",
+          "typeSpec" : "Execute"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "enableFrameBuffer",
+          "execPortType" : "In",
+          "typeSpec" : "Boolean"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "VRayInit"
+          }
+        ],
+      "extDeps" : {
+        "vrayforfabric" : "*",
+        "FabricInterfaces" : "*"
+        },
+      "presetGUID" : "2D967ED65E8C337A3D8A201792955EA2",
+      "code" : "require vrayforfabric;
+
+dfgEntry {
+  result = VRayInit(enableFrameBuffer);
+}
+"
+      },
+    "VRayRenderer.VRayRenderer" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "Supported types:\n  result: VRayRenderer\n"
         },
       "title" : "VRayRenderer",
       "ports" : [
@@ -606,73 +486,17 @@
         "FabricInterfaces" : "*"
         },
       "presetGUID" : "5A5160AF3849C3316BB0447DAD68AB07",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  result = VRayRenderer();\n}\n"
+      "code" : "require vrayforfabric;
+
+dfgEntry {
+  result = VRayRenderer();
+}
+"
       },
-    "ChaosGroup.Exts.VRay.VRayRenderer.SetRenderMode" : {
+    "VRayRenderer.Load" : {
       "objectType" : "Func",
       "metadata" : {
-        "uiTooltip" : "\n\n Supported by VRayRenderer"
-        },
-      "title" : "SetRenderMode",
-      "ports" : [
-        {
-          "objectType" : "Port",
-          "nodePortType" : "IO",
-          "name" : "exec",
-          "execPortType" : "IO",
-          "typeSpec" : "Execute"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "Out",
-          "name" : "this",
-          "execPortType" : "In",
-          "typeSpec" : "VRayRenderer"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "Out",
-          "name" : "mode",
-          "execPortType" : "In",
-          "typeSpec" : "VRay_RenderMode"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "In",
-          "name" : "result",
-          "execPortType" : "Out",
-          "typeSpec" : "Boolean"
-          }
-        ],
-      "extDeps" : {
-        "vrayforfabric" : "*",
-        "FabricInterfaces" : "*"
-        },
-      "presetGUID" : "4527DA81E4C8E35F271FAAF0AAB45874",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  result = this.setRenderMode(mode);\n}\n"
-      },
-    "ChaosGroup.Exts.VRay.Constants.VRay_RENDER_MODE_PRODUCTION" : {
-      "objectType" : "Func",
-      "title" : "VRay_RENDER_MODE_PRODUCTION",
-      "ports" : [
-        {
-          "objectType" : "Port",
-          "nodePortType" : "In",
-          "name" : "value",
-          "execPortType" : "Out",
-          "typeSpec" : "VRay_RenderMode"
-          }
-        ],
-      "extDeps" : {
-        "vrayforfabric" : "*"
-        },
-      "presetGUID" : "220F09F79B55D4039806733D199BC226",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  value = VRay_RENDER_MODE_PRODUCTION;\n}\n"
-      },
-    "ChaosGroup.Exts.VRay.VRayRenderer.Load" : {
-      "objectType" : "Func",
-      "metadata" : {
-        "uiTooltip" : "\n\n Supported by VRayRenderer"
+        "uiTooltip" : "Supported types:\n  this: VRayRenderer\n  fileName: String\n  result: SInt32\n"
         },
       "title" : "Load",
       "ports" : [
@@ -710,105 +534,17 @@
         "FabricInterfaces" : "*"
         },
       "presetGUID" : "43E2728CC9EC16AE1F4CA6DCD546F362",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  result = this.load(fileName);\n}\n"
+      "code" : "require vrayforfabric;
+
+dfgEntry {
+  result = this.load(fileName);
+}
+"
       },
-    "ChaosGroup.Exts.VRay.VRayInit.VRayInit" : {
+    "VRayRenderer.GetPluginNames" : {
       "objectType" : "Func",
       "metadata" : {
-        "uiTooltip" : "\n\n Supported by VRayInit"
-        },
-      "title" : "VRayInit",
-      "ports" : [
-        {
-          "objectType" : "Port",
-          "nodePortType" : "IO",
-          "name" : "exec",
-          "execPortType" : "IO",
-          "typeSpec" : "Execute"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "Out",
-          "name" : "enableFrameBuffer",
-          "execPortType" : "In",
-          "typeSpec" : "Boolean"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "In",
-          "name" : "result",
-          "execPortType" : "Out",
-          "typeSpec" : "VRayInit"
-          }
-        ],
-      "extDeps" : {
-        "vrayforfabric" : "*",
-        "FabricInterfaces" : "*"
-        },
-      "presetGUID" : "2D967ED65E8C337A3D8A201792955EA2",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  result = VRayInit(enableFrameBuffer);\n}\n"
-      },
-    "ChaosGroup.Exts.VRay.VRayRenderer.GetRenderMode" : {
-      "objectType" : "Func",
-      "metadata" : {
-        "uiTooltip" : "\n\n Supported by VRayRenderer"
-        },
-      "title" : "GetRenderMode",
-      "ports" : [
-        {
-          "objectType" : "Port",
-          "nodePortType" : "IO",
-          "name" : "exec",
-          "execPortType" : "IO",
-          "typeSpec" : "Execute"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "Out",
-          "name" : "this",
-          "execPortType" : "In",
-          "typeSpec" : "VRayRenderer"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "In",
-          "name" : "result",
-          "execPortType" : "Out",
-          "typeSpec" : "VRay_RenderMode"
-          }
-        ],
-      "extDeps" : {
-        "vrayforfabric" : "*",
-        "FabricInterfaces" : "*"
-        },
-      "presetGUID" : "DA248DBEDAE90A435534BC7440D49647",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  result = this.getRenderMode();\n}\n"
-      },
-    "Fabric.Core.Func.Report" : {
-      "objectType" : "Func",
-      "metadata" : {
-        "uiNodeColor" : "{\n  \"r\" : 214,\n  \"g\" : 191,\n  \"b\" : 103\n  }",
-        "uiAlwaysShowDaisyChainPorts" : "true",
-        "uiHeaderColor" : "{\n  \"r\" : 188,\n  \"g\" : 129,\n  \"b\" : 83\n  }"
-        },
-      "title" : "Report",
-      "ports" : [
-        {
-          "objectType" : "Port",
-          "nodePortType" : "Out",
-          "name" : "value",
-          "execPortType" : "In",
-          "typeSpec" : "$TYPE$"
-          }
-        ],
-      "extDeps" : {},
-      "presetGUID" : "E9448726588111C443C34B2F3D9B0172",
-      "code" : "\ndfgEntry {\n\treport(value);\n}\n"
-      },
-    "ChaosGroup.Exts.VRay.VRayRenderer.GetPluginNames" : {
-      "objectType" : "Func",
-      "metadata" : {
-        "uiTooltip" : "\n\n Supported by VRayRenderer"
+        "uiTooltip" : "Supported types:\n  this: VRayRenderer\n  result: String[]\n"
         },
       "title" : "GetPluginNames",
       "ports" : [
@@ -839,12 +575,113 @@
         "FabricInterfaces" : "*"
         },
       "presetGUID" : "73F327E468E0FF836A4DE2E16BF89044",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  result = this.getPluginNames();\n}\n"
+      "code" : "require vrayforfabric;
+
+dfgEntry {
+  result = this.getPluginNames();
+}
+"
       },
-    "ChaosGroup.Exts.VRay.VRayRenderer.Run" : {
+    "Fabric.Core.Func.Report" : {
       "objectType" : "Func",
       "metadata" : {
-        "uiTooltip" : "\n\n Supported by VRayRenderer"
+        "uiNodeColor" : "{\n  \"r\" : 214,\n  \"g\" : 191,\n  \"b\" : 103\n  }",
+        "uiAlwaysShowDaisyChainPorts" : "true",
+        "uiHeaderColor" : "{\n  \"r\" : 188,\n  \"g\" : 129,\n  \"b\" : 83\n  }"
+        },
+      "title" : "Report",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "value",
+          "execPortType" : "In",
+          "typeSpec" : "$TYPE$"
+          }
+        ],
+      "extDeps" : {},
+      "presetGUID" : "E9448726588111C443C34B2F3D9B0172",
+      "code" : "
+dfgEntry {
+	report(value);
+}
+"
+      },
+    "ChaosGroup.Exts.VRay.Constants.VRay_RENDER_MODE_PRODUCTION" : {
+      "objectType" : "Func",
+      "title" : "VRay_RENDER_MODE_PRODUCTION",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "In",
+          "name" : "value",
+          "execPortType" : "Out",
+          "typeSpec" : "VRay_RenderMode"
+          }
+        ],
+      "extDeps" : {
+        "vrayforfabric" : "*"
+        },
+      "presetGUID" : "220F09F79B55D4039806733D199BC226",
+      "code" : "require vrayforfabric;
+
+dfgEntry {
+  value = VRay_RENDER_MODE_PRODUCTION;
+}
+"
+      },
+    "VRayRenderer.SetRenderMode" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "Supported types:\n  this: VRayRenderer\n  mode: VRay_RenderMode\n  result: Boolean\n"
+        },
+      "title" : "SetRenderMode",
+      "ports" : [
+        {
+          "objectType" : "Port",
+          "nodePortType" : "IO",
+          "name" : "exec",
+          "execPortType" : "IO",
+          "typeSpec" : "Execute"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "this",
+          "execPortType" : "In",
+          "typeSpec" : "VRayRenderer"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "Out",
+          "name" : "mode",
+          "execPortType" : "In",
+          "typeSpec" : "VRay_RenderMode"
+          },
+        {
+          "objectType" : "Port",
+          "nodePortType" : "In",
+          "name" : "result",
+          "execPortType" : "Out",
+          "typeSpec" : "Boolean"
+          }
+        ],
+      "extDeps" : {
+        "vrayforfabric" : "*",
+        "FabricInterfaces" : "*"
+        },
+      "presetGUID" : "4527DA81E4C8E35F271FAAF0AAB45874",
+      "code" : "require vrayforfabric;
+
+dfgEntry {
+  result = this.setRenderMode(mode);
+}
+"
+      },
+    "VRayRenderer.Run" : {
+      "objectType" : "Func",
+      "metadata" : {
+        "uiTooltip" : "Supported types:\n  this: VRayRenderer\n"
         },
       "title" : "Run",
       "ports" : [
@@ -868,12 +705,17 @@
         "FabricInterfaces" : "*"
         },
       "presetGUID" : "5644A522594FC7FF46023906AF276582",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  this.run();\n}\n"
+      "code" : "require vrayforfabric;
+
+dfgEntry {
+  this.run();
+}
+"
       },
-    "ChaosGroup.Exts.VRay.VRayRenderer.SaveImage" : {
+    "VRayRenderer.SaveImage" : {
       "objectType" : "Func",
       "metadata" : {
-        "uiTooltip" : "\n\n Supported by VRayRenderer"
+        "uiTooltip" : "Supported types:\n  this: VRayRenderer\n  fileName: String\n  options: ImageWriterOptions\n  result: Boolean\n"
         },
       "title" : "SaveImage",
       "ports" : [
@@ -918,50 +760,12 @@
         "FabricInterfaces" : "*"
         },
       "presetGUID" : "F39220B6D95053FF02EA95BED546CBB4",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  result = this.saveImage(fileName, options);\n}\n"
-      },
-    "ChaosGroup.Exts.VRay.VRayRenderer.ExportScene" : {
-      "objectType" : "Func",
-      "metadata" : {
-        "uiTooltip" : "\n\n Supported by VRayRenderer"
-        },
-      "title" : "ExportScene",
-      "ports" : [
-        {
-          "objectType" : "Port",
-          "nodePortType" : "IO",
-          "name" : "exec",
-          "execPortType" : "IO",
-          "typeSpec" : "Execute"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "Out",
-          "name" : "this",
-          "execPortType" : "In",
-          "typeSpec" : "VRayRenderer"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "Out",
-          "name" : "fileName",
-          "execPortType" : "In",
-          "typeSpec" : "String"
-          },
-        {
-          "objectType" : "Port",
-          "nodePortType" : "In",
-          "name" : "result",
-          "execPortType" : "Out",
-          "typeSpec" : "SInt32"
-          }
-        ],
-      "extDeps" : {
-        "vrayforfabric" : "*",
-        "FabricInterfaces" : "*"
-        },
-      "presetGUID" : "10181DADA1391850B3A052C2282B9775",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  result = this.exportScene(fileName);\n}\n"
+      "code" : "require vrayforfabric;
+
+dfgEntry {
+  result = this.saveImage(fileName, options);
+}
+"
       },
     "ChaosGroup.Exts.VRay.ImageWriterOptions.ComposeImageWriterOptions" : {
       "objectType" : "Func",
@@ -1020,7 +824,14 @@
         "vrayforfabric" : "*"
         },
       "presetGUID" : "4D79A49D6298268533AAC4FF5CA8E48E",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  result.flags = flags;\n  result.compressionType = compressionType;\n  result.bitsPerChannel = bitsPerChannel;\n}\n"
+      "code" : "require vrayforfabric;
+
+dfgEntry {
+  result.flags = flags;
+  result.compressionType = compressionType;
+  result.bitsPerChannel = bitsPerChannel;
+}
+"
       },
     "ChaosGroup.Exts.VRay.ImageWriterFlags.ComposeImageWriterFlags" : {
       "objectType" : "Func",
@@ -1138,7 +949,21 @@
         "vrayforfabric" : "*"
         },
       "presetGUID" : "4D79A49D6298268533AAC4FF5CA8E48E",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  result.multipleFiles = multipleFiles;\n  result.skipAlpha = skipAlpha;\n  result.frameNumber = frameNumber;\n  result.noAlpha = noAlpha;\n  result.singleChannel = singleChannel;\n  result.skipRGB = skipRGB;\n  result.writeIntegerIDs = writeIntegerIDs;\n  result.velocityZeroBased = velocityZeroBased;\n  result.multiChannel = multiChannel;\n  result.applyColorCorrections = applyColorCorrections;\n}\n"
+      "code" : "require vrayforfabric;
+
+dfgEntry {
+  result.multipleFiles = multipleFiles;
+  result.skipAlpha = skipAlpha;
+  result.frameNumber = frameNumber;
+  result.noAlpha = noAlpha;
+  result.singleChannel = singleChannel;
+  result.skipRGB = skipRGB;
+  result.writeIntegerIDs = writeIntegerIDs;
+  result.velocityZeroBased = velocityZeroBased;
+  result.multiChannel = multiChannel;
+  result.applyColorCorrections = applyColorCorrections;
+}
+"
       },
     "ChaosGroup.Exts.VRay.Constants.VRay_NO_COMPRESSION" : {
       "objectType" : "Func",
@@ -1156,7 +981,12 @@
         "vrayforfabric" : "*"
         },
       "presetGUID" : "0BA77CD2402928AC65F0AEE756D5C85C",
-      "code" : "require vrayforfabric;\n\ndfgEntry {\n  value = VRay_NO_COMPRESSION;\n}\n"
+      "code" : "require vrayforfabric;
+
+dfgEntry {
+  value = VRay_NO_COMPRESSION;
+}
+"
       }
     },
   "args" : [
@@ -1164,22 +994,6 @@
       "type" : "Execute",
       "value" : null,
       "ext" : "FabricInterfaces"
-      },
-    {
-      "type" : "String[]",
-      "value" : null
-      },
-    {
-      "type" : "Boolean",
-      "value" : null
-      },
-    {
-      "type" : "VRay_RenderMode",
-      "value" : null
-      },
-    {
-      "type" : "SInt32",
-      "value" : null
       }
     ]
   }

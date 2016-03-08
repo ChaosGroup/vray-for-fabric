@@ -13,22 +13,14 @@ function ~VRayRenderer() = "VRayRenderer_destruct";
 function VRayError VRayRenderer.getLastError() = "VRayRenderer_getLastError";
 function ParserError VRayRenderer.getLastParserError() = "VRayRenderer_getLastParserError";
 
-function InstanceId VRayRenderer.getPluginID (String pluginName) = "VRayRenderer_getPluginID";
-function String VRayRenderer.getPluginName (InstanceId pluginID) = "VRayRenderer_getPluginName";
+function InstanceId VRayRenderer.getPluginId (String pluginName) = "VRayRenderer_getPluginId";
+function String VRayRenderer.getPluginName (InstanceId pluginId) = "VRayRenderer_getPluginName";
 
 function Boolean VRayRenderer.setRenderMode (VRay_RenderMode mode) = "VRayRenderer_setRenderMode";
 function VRay_RenderMode VRayRenderer.getRenderMode() = "VRayRenderer_getRenderMode";
 
-function VRayRenderer.showFrameBuffer (Boolean visible) = "VRayRenderer_showFrameBuffer";
-function VRayRenderer.showFrameBuffer (Boolean visible, Boolean setFocus) = "VRayRenderer_showFrameBuffer_variant1";
-function Boolean VRayRenderer.isFrameBufferShown() = "VRayRenderer_isFrameBufferShown";
-
 function Boolean VRayRenderer.setOptions (RendererOptions options) = "VRayRenderer_setOptions";
 function RendererOptions VRayRenderer.getOptions() = "VRayRenderer_getOptions";
-
-function VRayRenderer.enableVFBInteractivity() = "VRayRenderer_enableVFBInteractivity";
-function VRayRenderer.enableVFBInteractivity (Boolean enable) = "VRayRenderer_enableVFBInteractivity_variant1";
-function Boolean VRayRenderer.isVFBInteractivityEnabled() = "VRayRenderer_isVFBInteractivityEnabled";
 
 function SInt32 VRayRenderer.getCurrentFrame() = "VRayRenderer_getCurrentFrame";
 function VRayRenderer.setCurrentFrame (SInt32 frame) = "VRayRenderer_setCurrentFrame";
@@ -52,7 +44,7 @@ function Boolean VRayRenderer.setWidth (SInt32 width) = "VRayRenderer_setWidth";
 function Boolean VRayRenderer.setHeight (SInt32 height) = "VRayRenderer_setHeight";
 function Boolean VRayRenderer.setImageSize (SInt32 width, SInt32 height) = "VRayRenderer_setImageSize";
 
-function Boolean VRayRenderer.setRenderRegion (SInt32 srcX, SInt32 srcY, SInt32 srcWidth, SInt32 srcHeight, SInt32 destX, SInt32 destY, SInt32 destWidth, SInt32 destHeight) = "VRayRenderer_setRenderRegion";
+function Boolean VRayRenderer.setRenderRegion (SInt32 rgnLeft, SInt32 rgnTop, SInt32 rgnWidth, SInt32 rgnHeight) = "VRayRenderer_setRenderRegion";
 
 function SInt32 VRayRenderer.load (String fileName) = "VRayRenderer_load";
 function SInt32 VRayRenderer.loadAsText (String text) = "VRayRenderer_loadAsText";
@@ -101,7 +93,7 @@ function VRayPlugin VRayRenderer.getInstanceOf (String pluginType) = "VRayRender
 function VRayPlugin VRayRenderer.getInstanceOrCreate (String pluginType) = "VRayRenderer_getInstanceOrCreate";
 
 function VRayPlugin VRayRenderer.getPlugin (String pluginName) = "VRayRenderer_getPlugin_byname";
-function VRayPlugin VRayRenderer.getPlugin (InstanceId pluginID) = "VRayRenderer_getPlugin_byid";
+function VRayPlugin VRayRenderer.getPlugin (InstanceId pluginId) = "VRayRenderer_getPlugin_byid";
 function VRayPluginMeta VRayRenderer.getPluginMeta (String pluginClassName) = "VRayRenderer_getPluginMeta";
 function VRayPlugin VRayRenderer.newPlugin (String pluginName, String pluginType) = "VRayRenderer_newPlugin";
 function VRayPlugin VRayRenderer.newPlugin (String pluginType) = "VRayRenderer_newPlugin_noname";
@@ -110,13 +102,8 @@ function VRayPlugin VRayRenderer.pickPlugin (SInt32 x, SInt32 y, SInt32 timeout)
 function PluginDistancePair[] VRayRenderer.pickPlugins (Float64 x, Float64 y) = "VRayRenderer_pickPlugins";
 function PluginDistancePair[] VRayRenderer.pickPlugins (Float64 x, Float64 y, SInt32 maxcount, SInt32 timeout) = "VRayRenderer_pickPlugins_variant1";
 function Boolean VRayRenderer.removePlugin (VRayPlugin plugin) = "VRayRenderer_removePlugin";
-function VRayPlugin VRayRenderer.getPluginPtr (String pluginName) = "VRayRenderer_getPluginPtr_byname";
-function VRayPlugin VRayRenderer.getPluginPtr (InstanceId pluginID) = "VRayRenderer_getPluginPtr_byid";
-function VRayPlugin VRayRenderer.pickPluginPtr (SInt32 x, SInt32 y) = "VRayRenderer_pickPluginPtr";
-function VRayPlugin VRayRenderer.pickPluginPtr (SInt32 x, SInt32 y, SInt32 timeout) = "VRayRenderer_pickPluginPtr_timeout";
-function VRayRenderer.freePluginPtr (VRayPlugin ptr) = "VRayRenderer_freePluginPtr";
 function Boolean VRayRenderer.pluginExists (String pluginName) = "VRayRenderer_pluginExists_byname";
-function Boolean VRayRenderer.pluginExists (InstanceId pluginID) = "VRayRenderer_pluginExists_byid";
+function Boolean VRayRenderer.pluginExists (InstanceId pluginId) = "VRayRenderer_pluginExists_byid";
 
 function Boolean VRayRenderer.getAutoCommit() = "VRayRenderer_getAutoCommit";
 function VRayRenderer.setAutoCommit (Boolean autoCommit) = "VRayRenderer_setAutoCommit";

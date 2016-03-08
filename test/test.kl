@@ -7,13 +7,13 @@ operator entry() {
     options.setRenderMode (VRay_RENDER_MODE_PRODUCTION);
 
     RendererFlags flags;
-    flags.showFrameBuffer = false;
+    flags.showFrameBuffer = true;
     options.setFlags (flags);
 
     VRayRenderer renderer (options);
 
     report ("loading vrscene ...");
-    Integer loaded = renderer.load ("test/test.vrscene");
+    Integer loaded = renderer.load ("test.vrscene");
     if (loaded != 0) {
         report ("loading failed ... exiting.");
         return;
@@ -22,13 +22,16 @@ operator entry() {
     String names[] = renderer.getPluginNames();
 
     for (Integer i; i < names.size(); i++) {
-        report (names[i]+": "+renderer.getPluginID (names[i]));
+        report (names[i]+": "+renderer.getPluginId (names[i]));
     }
 
     VRayPlugin plugin = renderer.getInstanceOf ("GeomStaticMesh");
     report (plugin.getName());
-    VRayValue value = plugin.getValue("vertices");
-    report (value.getVectorList());
+    //VRayValue value = plugin.getValue("vertices");
+    //report (value.getVectorList());
+    //renderer.removePlugin (plugin);
+    plugin = renderer.getInstanceOf ("GeomStaticSmoothedMesh");
+    //renderer.removePlugin (plugin);
 
     report ("Rendering ...");
     renderer.run();
