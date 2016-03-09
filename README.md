@@ -68,7 +68,8 @@ This test will load the `test.vrscene` file and generate a `render.png` file and
 kl test.kl
 ```
 ### GUI test using the `canvas` application:
-Launch canvas with the `test.canvas` file as an argument. Once you're in Canvas, connect the result plug of the SaveImage node to the 'expose' input on the right-side of the canvas to initiate graph execution. You should get an output png called `output_from_canvas.png` in the test directory.
+Launch canvas with the `test.canvas` file as an argument.
 ```
 canvas test.canvas
 ```
+Once you're in Canvas, connect the result plug of the 'SaveImage' node to the 'expose' input on the right-side of the canvas to initiate graph execution. You should get an output png called `output_from_canvas.png` in the test directory.
