@@ -12,8 +12,13 @@ extName = 'vrayforfabric'
 
 env = fabricBuildEnv.Clone()
 env.Append (CPPPATH = [os.path.join (os.environ['VRAY_SDK'], 'cpp/include')])
-env.Append (LIBPATH = [os.path.join (os.environ['VRAY_SDK'], 'bin')])
-env.Append (LIBS = ['vray', 'VRaySDKLibrary'])
+
+if env['FABRIC_BUILD_OS'] == 'Windows':
+    env.Append (LIBPATH = [os.path.join (os.environ['VRAY_SDK'], 'lib')])
+else:
+    env.Append (LIBPATH = [os.path.join (os.environ['VRAY_SDK'], 'bin')])
+
+env.Append (LIBS = ['VRaySDKLibrary'])
 
 cppFiles = env.Glob ('*.cpp')
 klFiles  = env.Glob ('*.kl')

@@ -33,3 +33,5 @@ build/*
 *.exe
 *.out
 *.app
+test/dump.vrscene
+test/render.png
