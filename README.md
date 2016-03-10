@@ -13,10 +13,12 @@ A number of environment variables need to be set prior to building the project. 
 
 Linux:
 ```
+cd <vray-for-fabric dir>
 source setup.sh
 ```
 Windows:
 ```
+cd <vray-for-fabric dir>
 call setup.bat
 ```
 #### V-Ray Application SDK
