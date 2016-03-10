@@ -52,6 +52,10 @@ To clean, run `scons -c`. This will remove everything in the `./build` and `./st
 ```
 scons -c
 ```
+To get detailed output, pass VERBOSE=1 on the commandline.
+```
+scons VERBOSE=1
+```
 ## Test
 In order to test vray-for-fabric, 'cd' to the 'test' dir.
 ```
