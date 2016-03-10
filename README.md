@@ -2,7 +2,6 @@
 ![Canvas Screenshot](https://sjparker.github.io/images/screenshots/canvas.png)
 This project wraps the V-Ray Application SDK and provides bindings to Fabric Engine's scripting language, KL. It also exposes those bindings in Fabric Engine's graphical programming application, Canvas.
 
-The documentation and examples below assume a Linux environment.
 ## Requirements
 - latest build of V-Ray Application SDK. (last confirmed test: 1.07.00-vray33501-20160308)
 - [Fabric Engine](http://fabricengine.com/get-fabric/) 2.1.x
@@ -10,6 +9,16 @@ The documentation and examples below assume a Linux environment.
 - [SCons](https://scons.org/) build system.
 
 ## Setup
+A number of environment variables needs to be set prior to building the project. For convenience, `setup.bat` and `setup.sh` are included. You will most definitely need to edit these to point to the correct locations and versions of the software packages.
+
+Linux:
+```
+source setup.sh
+```
+Windows:
+```
+call setup.bat
+```
 ### V-Ray Application SDK
 V-Ray Application SDK requires the following environment variables to be set.
 
