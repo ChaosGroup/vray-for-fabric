@@ -9,7 +9,7 @@ This project wraps the V-Ray Application SDK and provides bindings to Fabric Eng
 - [SCons](https://scons.org/) build system.
 
 ## Setup
-A number of environment variables needs to be set prior to building the project. For convenience, `setup.bat` and `setup.sh` are included. You will most definitely need to edit these to point to the correct locations and versions of the software packages.
+A number of environment variables need to be set prior to building the project. For convenience, `setup.bat` and `setup.sh` are included. You will most definitely need to edit these to point to the correct locations and versions of the software packages.
 
 Linux:
 ```
@@ -19,7 +19,7 @@ Windows:
 ```
 call setup.bat
 ```
-### V-Ray Application SDK
+#### V-Ray Application SDK
 V-Ray Application SDK requires the following environment variables to be set.
 
 Example (Linux/bash):
@@ -30,7 +30,7 @@ export PATH=${PATH}:/opt/chaosgroup/vrayappsdk/20160308/bin
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/opt/chaosgroup/vrayappsdk/20160308/bin
 export PYTHONPATH=${PYTHONPATH}:/opt/chaosgroup/vrayappsdk/20160308/python27/bin
 ```
-### Fabric Engine
+#### Fabric Engine
 Fabric Engine requires the following environment variables to be set.
 
 Example (Linux/bash):
@@ -57,12 +57,12 @@ In order to test vray-for-fabric, 'cd' to the 'test' dir.
 ```
 cd ./test
 ```
-### Commandline test using the `kl` tool:
+#### Commandline test using the `kl` tool:
 This test will load the `test.vrscene` file and generate a `render.png` file and re-export the vrscene as `dump.vrscene`.
 ```
 kl test.kl
 ```
-### GUI test using the `canvas` application:
+#### GUI test using the `canvas` application:
 Launch canvas with the `test.canvas` file as an argument.
 ```
 canvas test.canvas
