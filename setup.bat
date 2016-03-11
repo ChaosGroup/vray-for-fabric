@@ -12,6 +12,5 @@ set PYTHONPATH=%PYTHONPATH%;c:/opt/fabricsoftware/fabric-engine/FabricEngine-2.1
 
 set stagepath=%~dp0/stage
 set FABRIC_EXTS_PATH=%FABRIC_EXTS_PATH%;%stagepath%
-set FABRIC_DFG_PATH=%FABRIC_DFG_PATH%;%stagepath%/presets
 set FABRIC_ENABLE_CRASH_HANDLER=1
 set FABRIC_DEBUG=2
